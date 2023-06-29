@@ -36,12 +36,19 @@
             top: 10px;
             right: 10px;
         }
+        #play-button {
+            display: none;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Nos casamos Martha y Ricardo</h1>
         <button id="pause-button">⏸️</button>
+        <button id="play-button">▶️</button>
     </header>
     <div id="popup">
         <div id="popup-content">
@@ -62,6 +69,7 @@
             document.getElementById("pause-button").onclick = function() {
                 audio.pause();
                 document.getElementById("pause-button").style.display = "none";
+                document.getElementById("play-button").style.display = "none";
             }
         }
     </script>
