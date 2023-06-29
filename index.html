@@ -66,9 +66,15 @@
             var audio = new Audio("cancion.mp3");
             audio.play();
             document.getElementById("pause-button").style.display = "block";
+            document.getElementById("play-button").style.display = "block";
             document.getElementById("pause-button").onclick = function() {
                 audio.pause();
                 document.getElementById("pause-button").style.display = "none";
+                
+            }
+            document.getElementById("play-button").onclick = function() {
+                audio.play();
+                
                 document.getElementById("play-button").style.display = "none";
             }
         }
