@@ -8,11 +8,17 @@
         /* Estilos para la página */
         body {
             font-family: Arial, sans-serif;
+            background-image: url('source/fondo_portada.jpg');
+            background-attachment: fixed;
+            background-size: cover;
         }
         header {
             background-color: #f4f4f4;
             padding: 10px;
             text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
         }
         #popup {
             display: none;
@@ -36,6 +42,9 @@
             top: 10px;
             right: 10px;
         }
+        main {
+            margin-top: 60px; /* Ajustar según el tamaño del encabezado */
+        }
     </style>
 </head>
 <body>
@@ -44,6 +53,9 @@
         <button id="pause-button">⏸️</button>
         <button id="play-button">▶️</button>
     </header>
+    <main>
+        <!-- Contenido principal de la página -->
+    </main>
     <div id="popup">
         <div id="popup-content">
             <p>¡Bienvenido a nuestra invitación de boda!</p>
