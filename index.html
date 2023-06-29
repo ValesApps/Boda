@@ -54,7 +54,12 @@
             position: fixed;
             top: 10px;
             right: 10px;
-            color: #daa520;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: goldenrod;
+            font-size: 24px;
+            outline: none;
         }
     </style>
 </head>
@@ -68,9 +73,9 @@
     <header>
         <div id="content">
             <h1>Nos casamos Martha y Ricardo</h1>
-            <button id="pause-button">⏸️</button>
-            <button id="play-button">▶️</button>
         </div>
+        <button id="pause-button">⏸️</button>
+        <button id="play-button">▶️</button>
     </header>
     <main>
         <!-- Contenido principal de la página -->
@@ -80,36 +85,25 @@
         window.onload = function() {
             document.getElementById("popup").style.display = "flex";
         }
-        
-        function toggleButtons() {
-          var pauseButton = document.getElementById("pause-button");
-          var playButton = document.getElementById("play-button");
-          if (pauseButton.style.display === "none") {
-              pauseButton.style.display = "block";
-              playButton.style.display = "none";
-          } else {
-              pauseButton.style.display = "none";
-              playButton.style.display = "block";
-          }
-      }
 
-      var audio = new Audio("cancion.mp3");
+        document.getElementById("accept-button").onclick = function() {
+            document.getElementById("popup").style.display = "none";
+            var audio = new Audio("cancion.mp3");
+            audio.play();
+            document.getElementById("pause-button").style.display = "block";
+        }
 
-      document.getElementById("accept-button").onclick = function() {
-          document.getElementById("popup").style.display = "none";
-          audio.play();
-          document.getElementById("pause-button").style.display = "block";
-      }
+        document.getElementById("pause-button").onclick = function() {
+            audio.pause();
+            document.getElementById("pause-button").style.display = "none";
+            document.getElementById("play-button").style.display = "block";
+        }
 
-      document.getElementById("pause-button").onclick = function() {
-          audio.pause();
-          toggleButtons();
-      }
-
-      document.getElementById("play-button").onclick = function() {
-          audio.play();
-          toggleButtons();
-      }
+        document.getElementById("play-button").onclick = function() {
+            audio.play();
+            document.getElementById("play-button").style.display = "none";
+            document.getElementById("pause-button").style.display = "block";
+        }
     </script>
 </body>
 </html>
