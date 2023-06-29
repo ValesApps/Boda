@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Invitación de Boda</title>
+    <style>
+        /* Estilos para la página */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        #popup-content {
+            background-color: white;
+            width: 70%;
+            margin: 10% auto;
+            padding: 20px;
+            text-align: center;
+        }
+        #pause-button {
+            display: none;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nos casamos Martha y Ricardo</h1>
+        <button id="pause-button">⏸️</button>
+    </header>
+    <div id="popup">
+        <div id="popup-content">
+            <p>¡Bienvenido a nuestra invitación de boda!</p>
+            <button id="accept-button">Aceptar</button>
+        </div>
+    </div>
+    <script>
+        // Código JavaScript para mostrar el mensaje emergente y reproducir la música
+        window.onload = function() {
+            document.getElementById("popup").style.display = "block";
+        }
+        document.getElementById("accept-button").onclick = function() {
+            document.getElementById("popup").style.display = "none";
+            var audio = new Audio("cancion.mp3");
+            audio.play();
+            document.getElementById("pause-button").style.display = "block";
+            document.getElementById("pause-button").onclick = function() {
+                audio.pause();
+                document.getElementById("pause-button").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
