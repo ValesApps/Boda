@@ -58,11 +58,16 @@
             document.getElementById("popup").style.display = "none";
             var audio = new Audio("cancion.mp3");
             audio.play();
-            document.getElementById("pause-button").style.display = "block";
-            document.getElementById("pause-button").onclick = function() {
-                audio.pause();
-                document.getElementById("pause-button").style.display = "none";
-            }
+            var pauseButton = document.getElementById("pause-button");
+pauseButton.onclick = function() {
+    if (audio.paused) {
+        audio.play();
+        pauseButton.textContent = "⏸️";
+    } else {
+        audio.pause();
+        pauseButton.textContent = "▶️";
+    }
+}
         }
     </script>
 </body>
