@@ -54,6 +54,7 @@
             position: fixed;
             top: 10px;
             right: 10px;
+            color: #daa520;
         }
     </style>
 </head>
@@ -79,24 +80,36 @@
         window.onload = function() {
             document.getElementById("popup").style.display = "flex";
         }
-        document.getElementById("accept-button").onclick = function() {
-            document.getElementById("popup").style.display = "none";
-            var audio = new Audio("cancion.mp3");
-            audio.play();
-            document.getElementById("pause-button").style.display = "block";
+        
+        function toggleButtons() {
+          var pauseButton = document.getElementById("pause-button");
+          var playButton = document.getElementById("play-button");
+          if (pauseButton.style.display === "none") {
+              pauseButton.style.display = "block";
+              playButton.style.display = "none";
+          } else {
+              pauseButton.style.display = "none";
+              playButton.style.display = "block";
+          }
+      }
 
-            document.getElementById("pause-button").onclick = function() {
-                audio.pause();
-                document.getElementById("pause-button").style.display = "none";
-                document.getElementById("play-button").style.display = "block";
-            }
+      var audio = new Audio("cancion.mp3");
 
-            document.getElementById("play-button").onclick = function() {
-                audio.play();
-                document.getElementById("play-button").style.display = "none";
-                document.getElementById("pause-button").style.display = "block";
-            }
-        }
+      document.getElementById("accept-button").onclick = function() {
+          document.getElementById("popup").style.display = "none";
+          audio.play();
+          document.getElementById("pause-button").style.display = "block";
+      }
+
+      document.getElementById("pause-button").onclick = function() {
+          audio.pause();
+          toggleButtons();
+      }
+
+      document.getElementById("play-button").onclick = function() {
+          audio.play();
+          toggleButtons();
+      }
     </script>
 </body>
 </html>
