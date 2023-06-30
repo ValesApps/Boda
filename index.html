@@ -75,8 +75,9 @@
             margin: auto;
         }
         .carousel-image {
+            object-fit: scale-down;
+            height: 50vh;
             width: 100%;
-            height: auto;
         }
         .carousel-image-container {
             display:none;
@@ -140,83 +141,4 @@
           <img class="carousel-image" src="source/image3.jpg" alt="">
       </div>
       <div class="carousel-image-container">
-          <img class="carousel-image" src="source/image4.jpg" alt="">
-      </div>
-      <div class="carousel-image-container">
-          <img class="carousel-image" src="source/image5.jpg" alt="">
-      </div>
-      <!-- ... -->
-      <div class="carousel-image-container">
-          <img class="carousel-image" src="source/image28.jpg" alt="">
-      </div>
-
-      <!-- Botones del carrusel -->
-      <button class="carousel-button left">&lt;</button>
-      <button class="carousel-button right">&gt;</button>
-    </div>
-
-    <main>
-      <!-- Contenido principal de la página -->
-    </main>
-
-    <script>
-      // Código JavaScript para mostrar el mensaje emergente y reproducir la música
-      window.onload = function() {
-          document.getElementById("popup").style.display = "flex";
-      }
-
-      var audio = new Audio("cancion.mp3");
-
-      document.getElementById("accept-button").onclick = function() {
-          document.getElementById("popup").style.display = "none";
-          audio.play();
-          document.getElementById("pause-button").style.display = "block";
-      }
-
-      document.getElementById("pause-button").onclick = function() {
-          audio.pause();
-          document.getElementById("pause-button").style.display = "none";
-          document.getElementById("play-button").style.display = "block";
-      }
-
-      document.getElementById("play-button").onclick = function() {
-          audio.play();
-          document.getElementById("play-button").style.display = "none";
-          document.getElementById("pause-button").style.display = "block";
-      }
-
-      // Código JavaScript para el carrusel de imágenes
-      let slideIndex = 0;
-      let slides = document.querySelectorAll(".carousel-image-container");
-      let leftButton = document.querySelector(".carousel-button.left");
-      let rightButton = document.querySelector(".carousel-button.right");
-
-      // Función para avanzar al siguiente slide
-      function nextSlide() {
-        slides[slideIndex].classList.remove("active");
-        slideIndex++;
-        if (slideIndex >= slides.length) {
-          slideIndex = 0;
-        }
-        slides[slideIndex].classList.add("active");
-      }
-
-      // Función para retroceder al slide anterior
-      function prevSlide() {
-        slides[slideIndex].classList.remove("active");
-        slideIndex--;
-        if (slideIndex < 0) {
-          slideIndex = slides.length - 1;
-        }
-        slides[slideIndex].classList.add("active");
-      }
-
-      // Avanzar automáticamente cada 10 segundos
-      setInterval(nextSlide, 10000);
-
-      // Agregar eventos a los botones del carrusel
-      leftButton.addEventListener("click", prevSlide);
-      rightButton.addEventListener("click", nextSlide);
-    </script>
-</body>
-</html>
+          <img class="carousel-image" src="source
