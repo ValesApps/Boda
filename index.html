@@ -75,10 +75,13 @@
             margin:auto
          }
          .carousel-image{
-             width:800px;
-             height:600px;
-             object-fit:cover
+             width:100%;
          }
+         
+         @media (min-width: 800px) {
+           .carousel-image {
+             width: 800px;
+           }
          .carousel-image-container{
              display:none
          }
