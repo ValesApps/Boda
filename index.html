@@ -64,8 +64,51 @@
         h1 {
           font-family : 'Alex Brush', cursive; 
           color : #c7a438; 
-          font-size :75px; 
+          font-size :90px; 
         }
+
+        /* Estilos para el carrusel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        .carousel-image {
+            width: 100%;
+            height: auto;
+        }
+        .carousel-image-container {
+            display:none;
+        }
+        .carousel-image-container.active{
+           display:block;
+           animation-name: fade;
+           animation-duration: 1s;
+           animation-fill-mode:both;
+         }
+         @keyframes fade{
+           from {opacity:.4;}
+           to {opacity:1;}
+         }
+         .carousel-button{
+             position:absolute;
+             top:50%;
+             transform:translateY(-50%);
+             background:none;
+             border:none;
+             font-size:2em;
+             color:white;
+             opacity:.7;
+             cursor:pointer
+         }
+         .carousel-button.left{
+             left:.5em
+         }
+         .carousel-button.right{
+             right:.5em
+         }
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
 </head>
@@ -78,14 +121,44 @@
     </div>
     <header>
       <div id="content">
-          <h1><span style="color:#c6ca76;">¡Nos casamos!</span> Martha y Ricardo</h1>
+          <h1><span style="color:#c6ca76;">Nos casamos</span> Martha y Ricardo</h1>
       </div>
       <button id="pause-button">⏸️</button>
       <button id="play-button">▶️</button>
     </header>
+
+    <!-- Carrusel de imágenes -->
+    <div class="carousel">
+      <!-- Imágenes del carrusel -->
+      <div class="carousel-image-container active">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+      </div>
+      <div class="carousel-image-container">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+      </div>
+      <div class="carousel-image-container">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+      </div>
+      <div class="carousel-image-container">
+          <img class="carousel-image" src="source/image4.jpg" alt="">
+      </div>
+      <div class="carousel-image-container">
+          <img class="carousel-image" src="source/image5.jpg" alt="">
+      </div>
+      <!-- ... -->
+      <div class="carousel-image-container">
+          <img class="carousel-image" src="source/image28.jpg" alt="">
+      </div>
+
+      <!-- Botones del carrusel -->
+      <button class="carousel-button left">&lt;</button>
+      <button class="carousel-button right">&gt;</button>
+    </div>
+
     <main>
       <!-- Contenido principal de la página -->
     </main>
+
     <script>
       // Código JavaScript para mostrar el mensaje emergente y reproducir la música
       window.onload = function() {
@@ -111,6 +184,39 @@
           document.getElementById("play-button").style.display = "none";
           document.getElementById("pause-button").style.display = "block";
       }
+
+      // Código JavaScript para el carrusel de imágenes
+      let slideIndex = 0;
+      let slides = document.querySelectorAll(".carousel-image-container");
+      let leftButton = document.querySelector(".carousel-button.left");
+      let rightButton = document.querySelector(".carousel-button.right");
+
+      // Función para avanzar al siguiente slide
+      function nextSlide() {
+        slides[slideIndex].classList.remove("active");
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        }
+        slides[slideIndex].classList.add("active");
+      }
+
+      // Función para retroceder al slide anterior
+      function prevSlide() {
+        slides[slideIndex].classList.remove("active");
+        slideIndex--;
+        if (slideIndex < 0) {
+          slideIndex = slides.length - 1;
+        }
+        slides[slideIndex].classList.add("active");
+      }
+
+      // Avanzar automáticamente cada 10 segundos
+      setInterval(nextSlide, 10000);
+
+      // Agregar eventos a los botones del carrusel
+      leftButton.addEventListener("click", prevSlide);
+      rightButton.addEventListener("click", nextSlide);
     </script>
 </body>
 </html>
