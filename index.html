@@ -69,27 +69,28 @@
 
         /* Estilos para el carrusel */
         .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: auto;
-        }
-        .carousel-image {
-            width: 100%;
-            height: auto;
-        }
-        .carousel-image-container {
-            display:none;
-        }
-        .carousel-image-container.active{
-           display:block;
-           animation-name: fade;
-           animation-duration: 1s;
-           animation-fill-mode:both;
+            position:relative;
+            width:100%;
+            max-width:800px;
+            margin:auto
+         }
+         .carousel-image{
+             width:800px;
+             height:600px;
+             object-fit:cover
+         }
+         .carousel-image-container{
+             display:none
+         }
+         .carousel-image-container.active{
+             display:block;
+             animation-name:fade;
+             animation-duration:1s;
+             animation-fill-mode:both
          }
          @keyframes fade{
-           from {opacity:.4;}
-           to {opacity:1;}
+             from{opacity:.4}
+             to{opacity:1}
          }
          .carousel-button{
              position:absolute;
@@ -136,23 +137,14 @@
       <div class="carousel-image-container">
           <img class="carousel-image" src="source/image2.jpg" alt="">
       </div>
-      <div class="carousel-image-container">
-          <img class="carousel-image" src="source/image3.jpg" alt="">
-      </div>
-      <div class="carousel-image-container">
-          <img class="carousel-image" src="source/image4.jpg" alt="">
-      </div>
-      <div class="carousel-image-container">
-          <img class="carousel-image" src="source/image5.jpg" alt="">
-      </div>
       <!-- ... -->
       <div class="carousel-image-container">
           <img class="carousel-image" src="source/image28.jpg" alt="">
       </div>
 
       <!-- Botones del carrusel -->
-      <button class="carousel-button left">&lt;</button>
-      <button class="carousel-button right">&gt;</button>
+      <button class="carousel-button left"><</button>
+      <button class="carousel-button right">></button>
     </div>
 
     <main>
