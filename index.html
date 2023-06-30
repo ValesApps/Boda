@@ -56,14 +56,14 @@
             right: 10px;
             background: none;
             border: none;
-            cursor: pointer;
-            color: goldenrod;
-            font-size: 24px;
-            outline: none;
+            cursor:pointer; 
+             color : goldenrod; 
+             font-size :24px; 
+             outline:none; 
         }
         h1 {
-            font-family: 'Alex Brush', cursive;
-            color: #8246AF;
+          font-family : 'Alex Brush', cursive; 
+          color : #8246AF; 
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
@@ -71,44 +71,45 @@
 <body>
     <div id="popup">
         <div id="popup-content">
-            <p>¡Bienvenido a nuestra invitación de boda!</p>
-            <button id="accept-button">Aceptar</button>
+          <p>¡Bienvenido a nuestra invitación de boda!</p>
+          <button id="accept-button">Aceptar</button>
         </div>
     </div>
     <header>
-        <div id="content">
-            <h1>Nos casamos Martha y Ricardo</h1>
-        </div>
-        <button id="pause-button">⏸️</button>
-        <button id="play-button">▶️</button>
+      <div id="content">
+          <h1>Nos casamos Martha y Ricardo</h1>
+      </div>
+      <button id="pause-button">⏸️</button>
+      <button id="play-button">▶️</button>
     </header>
     <main>
-        <!-- Contenido principal de la página -->
+      <!-- Contenido principal de la página -->
     </main>
     <script>
-        // Código JavaScript para mostrar el mensaje emergente y reproducir la música
-        window.onload = function() {
-            document.getElementById("popup").style.display = "flex";
-        }
+      // Código JavaScript para mostrar el mensaje emergente y reproducir la música
+      window.onload = function() {
+          document.getElementById("popup").style.display = "flex";
+      }
 
-        document.getElementById("accept-button").onclick = function() {
-            document.getElementById("popup").style.display = "none";
-            var audio = new Audio("cancion.mp3");
-            audio.play();
-            document.getElementById("pause-button").style.display = "block";
-        }
+      var audio = new Audio("cancion.mp3");
 
-        document.getElementById("pause-button").onclick = function() {
-            audio.pause();
-            document.getElementById("pause-button").style.display = "none";
-            document.getElementById("play-button").style.display = "block";
-        }
+      document.getElementById("accept-button").onclick = function() {
+          document.getElementById("popup").style.display = "none";
+          audio.play();
+          document.getElementById("pause-button").style.display = "block";
+      }
 
-        document.getElementById("play-button").onclick = function() {
-            audio.play();
-            document.getElementById("play-button").style.display = "none";
-            document.getElementById("pause-button").style.display = "block";
-        }
+      document.getElementById("pause-button").onclick = function() {
+          audio.pause();
+          document.getElementById("pause-button").style.display = "none";
+          document.getElementById("play-button").style.display = "block";
+      }
+
+      document.getElementById("play-button").onclick = function() {
+          audio.play();
+          document.getElementById("play-button").style.display = "none";
+          document.getElementById("pause-button").style.display = "block";
+      }
     </script>
 </body>
 </html>
