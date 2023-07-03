@@ -143,91 +143,35 @@
     <!-- Carrusel de imágenes -->
     <div class="carousel">
       <!-- Imágenes del carrusel -->
-      <div class="carousel-image-container active">
+      <div class="carousel-inner">
           <img class="carousel-image" src="source/image1.jpg" alt="">
-      </div>
-      <div class="carousel-image-container">
           <img class="carousel-image" src="source/image2.jpg" alt="">
-      </div>
-      <div class="carousel-image-container">
           <img class="carousel-image" src="source/image3.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image4.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image5.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image6.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image7.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image8.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image9.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image10.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image11.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image12.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image13.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image14.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image15.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image16.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image17.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image18.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image19.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image20.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image21.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image22.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image23.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image24.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image2.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image25.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image26.jpg" alt="">
-      </div>
-        <div class="carousel-image-container">
           <img class="carousel-image" src="source/image27.jpg" alt="">
-      </div>
-      <div class="carousel-image-container">
           <img class="carousel-image" src="source/image28.jpg" alt="">
       </div>
 
@@ -268,32 +212,43 @@
 
       // Código JavaScript para el carrusel de imágenes
       let slideIndex = 0;
-      let slides = document.querySelectorAll(".carousel-image-container");
+      let slides = document.querySelectorAll(".carousel-image");
       let leftButton = document.querySelector(".carousel-button.left");
       let rightButton = document.querySelector(".carousel-button.right");
 
+      // Función para mostrar el slide actual
+      function showSlide() {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+      }
+
       // Función para avanzar al siguiente slide
       function nextSlide() {
-        slides[slideIndex].classList.remove("active");
+        slides[slideIndex].style.display = "none";
         slideIndex++;
         if (slideIndex >= slides.length) {
           slideIndex = 0;
         }
-        slides[slideIndex].classList.add("active");
+        slides[slideIndex].style.display = "block";
       }
 
       // Función para retroceder al slide anterior
       function prevSlide() {
-        slides[slideIndex].classList.remove("active");
+        slides[slideIndex].style.display = "none";
         slideIndex--;
         if (slideIndex < 0) {
           slideIndex = slides.length - 1;
         }
-        slides[slideIndex].classList.add("active");
+        slides[slideIndex].style.display = "block";
       }
 
       // Avanzar automáticamente cada 10 segundos
-      setInterval(nextSlide, 30000);
+      setInterval(nextSlide, 10000);
+
+      // Mostrar el primer slide al cargar la página
+      showSlide();
 
       // Agregar eventos a los botones del carrusel
       leftButton.addEventListener("click", prevSlide);
