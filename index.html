@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
@@ -11,7 +10,6 @@
             font-family: Arial, sans-serif;
             margin: 0;
         }
-        
         header {
             background-image: url('source/imagen.jpg');
             background-size: cover;
@@ -24,122 +22,285 @@
             text-align: center;
             color: #ffffff;
         }
-        
         #content {
             padding: 20px;
         }
-        
         main {
             padding-top: 60px;
         }
-        
-        /* Estilos para el carrusel */
-        
-        .carousel {
-            position: relative;
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 800px;
-            margin: auto;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display:flex; 
+             align-items:center; 
+             justify-content:center; 
         }
-        
-        .carousel-image-container {
-            display: none;
+        #popup-content {
+          background-color :white; 
+          width :70%; 
+          padding :20px; 
+          text-align:center; 
         }
-        
-        .carousel-image-container.active {
-            display: block;
+        #accept-button {
+          margin-top :20px; 
         }
-        
-        .carousel-image {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
+        #pause-button,
+        #play-button {
+          display:none; 
+          position :fixed; 
+          top :10px; 
+          right :10px; 
+          background:none; 
+          border:none; 
+          cursor:pointer; 
+          color :goldenrod; 
+          font-size :24px; 
+          outline:none; 
         }
-        
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            font-size: 2em;
-            color: white;
-            opacity: 0.7;
-            cursor: pointer;
+        h1 {
+          font-family : 'Alex Brush', cursive; 
+          color : #c7a438; 
+          font-size :90px; 
         }
-        
-        .carousel-button.left {
-            left: 0.5em;
-        }
-        
-        .carousel-button.right {
-            right: 0.5em;
-        }
-        
-        @media (min-width: 800px) {
-            .carousel-image {
-                width: 800px;
-            }
-        }
-    </style>
-</head>
 
+        /* Estilos para el carrusel */
+
+        .carousel-inner {
+          width: 100%;
+          max-height: 500px; /* Altura máxima deseada */
+          overflow: hidden; /* Para recortar las imágenes */
+        }
+
+        .carousel-inner img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover; /* Para mantener la relación de aspecto y recortar las imágenes */
+         }
+        .carousel {
+            position:relative;
+            width:100%;
+            max-width:800px;
+            margin:auto
+         }
+         .carousel-image{
+             width:100%;
+         }
+         
+         @media (min-width: 800px) {
+           .carousel-image {
+             width: 800px;
+           }
+         .carousel-image-container{
+             display:none
+         }
+         .carousel-image-container.active{
+             display:block;
+             animation-name:fade;
+             animation-duration:1s;
+             animation-fill-mode:both
+         }
+         @keyframes fade{
+             from{opacity:.4}
+             to{opacity:1}
+         }
+         .carousel-button{
+             position:absolute;
+             top:50%;
+             transform:translateY(-50%);
+             background:none;
+             border:none;
+             font-size:2em;
+             color:white;
+             opacity:.7;
+             cursor:pointer
+         }
+         .carousel-button.left{
+             left:.5em
+         }
+         .carousel-button.right{
+             right:.5em
+         }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+</head>
 <body>
+    <div id="popup">
+      <div id="popup-content">
+          <p>¡Bienvenido a nuestra invitación de boda!</p>
+          <button id="accept-button">Aceptar</button>
+      </div>
+    </div>
     <header>
-        <div id="content">
-            <h1>¡Invitación de Boda!</h1>
-            <p>Estás invitado a nuestra boda</p>
-            <p>Fecha: 25 de agosto</p>
-            <p>Hora: 5:00 PM</p>
-            <p>Lugar: Salón de eventos XYZ</p>
-        </div>
+      <div id="content">
+          <h1><span style="color:#c6ca76;">Nos casamos</span> Martha y Ricardo</h1>
+      </div>
+      <button id="pause-button">⏸️</button>
+      <button id="play-button">▶️</button>
     </header>
 
     <!-- Carrusel de imágenes -->
     <div class="carousel">
-        <!-- Imágenes del carrusel -->
-        <div class="carousel-image-container active">
-            <img class="carousel-image" src="source/image1.jpg" alt="">
-        </div>
-        <div class="carousel-image-container">
-            <img class="carousel-image" src="source/image2.jpg" alt="">
-        </div>
-        <div class="carousel-image-container">
-            <img class="carousel-image" src="source/image3.jpg" alt="">
-        </div>
-        <div class="carousel-image-container">
-            <img class="carousel-image" src="source/image4.jpg" alt="">
-        </div>
-        <div class="carousel-image-container">
-            <img class="carousel-image" src="source/image5.jpg" alt="">
-        </div>
-        <!-- Botones del carrusel -->
-        <button class="carousel-button left" onclick="changeSlide(-1)">&lt;</button>
-        <button class="carousel-button right" onclick="changeSlide(1)">&gt;</button>
+      <!-- Imágenes del carrusel -->
+      <div class="carousel-inner">
+          <img class="carousel-image" src="source/image1.jpg" alt="">
+      </div>
+      <div class="carousel-inner">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+      </div>
+      <div class="carousel-inner">
+          <img class="carousel-image" src="source/image3.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image4.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image5.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image6.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image7.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image8.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image9.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image10.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image11.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image12.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image13.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image14.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image15.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image16.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image17.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image18.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image19.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image20.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image21.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image22.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image23.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image24.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image2.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image25.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image26.jpg" alt="">
+      </div>
+        <div class="carousel-inner">
+          <img class="carousel-image" src="source/image27.jpg" alt="">
+      </div>
+      <div class="carousel-inner">
+          <img class="carousel-image" src="source/image28.jpg" alt="">
+      </div>
+
+      <!-- Botones del carrusel -->
+      <button class="carousel-button left"><</button>
+      <button class="carousel-button right">></button>
     </div>
 
     <main>
-        <!-- Contenido principal de la página -->
+      <!-- Contenido principal de la página -->
     </main>
 
     <script>
-        // Código JavaScript para el carrusel de imágenes
-        var slideIndex = 0;
-        var slides = document.querySelectorAll(".carousel-image-container");
+      // Código JavaScript para mostrar el mensaje emergente y reproducir la música
+      window.onload = function() {
+          document.getElementById("popup").style.display = "flex";
+      }
 
-        function showSlide(n) {
-            slides[slideIndex].classList.remove("active");
-            slideIndex = (n + slides.length) % slides.length;
-            slides[slideIndex].classList.add("active");
+      var audio = new Audio("cancion.mp3");
+
+      document.getElementById("accept-button").onclick = function() {
+          document.getElementById("popup").style.display = "none";
+          audio.play();
+          document.getElementById("pause-button").style.display = "block";
+      }
+
+      document.getElementById("pause-button").onclick = function() {
+          audio.pause();
+          document.getElementById("pause-button").style.display = "none";
+          document.getElementById("play-button").style.display = "block";
+      }
+
+      document.getElementById("play-button").onclick = function() {
+          audio.play();
+          document.getElementById("play-button").style.display = "none";
+          document.getElementById("pause-button").style.display = "block";
+      }
+
+      // Código JavaScript para el carrusel de imágenes
+      let slideIndex = 0;
+      let slides = document.querySelectorAll(".carousel-inner");
+      let leftButton = document.querySelector(".carousel-button.left");
+      let rightButton = document.querySelector(".carousel-button.right");
+
+      // Función para avanzar al siguiente slide
+      function nextSlide() {
+        slides[slideIndex].classList.remove("active");
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
         }
+        slides[slideIndex].classList.add("active");
+      }
 
-        function changeSlide(n) {
-            showSlide(slideIndex + n);
+      // Función para retroceder al slide anterior
+      function prevSlide() {
+        slides[slideIndex].classList.remove("active");
+        slideIndex--;
+        if (slideIndex < 0) {
+          slideIndex = slides.length - 1;
         }
+        slides[slideIndex].classList.add("active");
+      }
 
-        // Mostrar el primer slide
-        showSlide(0);
+      // Avanzar automáticamente cada 10 segundos
+      setInterval(nextSlide, 30000);
+
+      // Agregar eventos a los botones del carrusel
+      leftButton.addEventListener("click", prevSlide);
+      rightButton.addEventListener("click", nextSlide);
     </script>
 </body>
-
 </html>
