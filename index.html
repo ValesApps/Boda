@@ -71,14 +71,14 @@
 
         .carousel-inner {
           width: 100%;
-          max-width: 100%;
-          height: auto;
+          max-height: 500%;
           overflow: hidden;
         }
 
         .carousel-inner img {
               max-width: 100%;
-              height: auto;
+              height: 100%;
+              object-fit: cover;
          }
         .carousel {
             position:relative;
@@ -88,8 +88,6 @@
          }
          .carousel-image{
              width:100%;
-             height: auto;
-             object-fit: cover;
          }
          
          @media (min-width: 800px) {
@@ -217,7 +215,7 @@
 
       // Código JavaScript para el carrusel de imágenes
       let slideIndex = 0;
-      let slides = document.querySelectorAll(".carousel-image");
+      let slides = document.querySelectorAll(".carousel-inner");
       let leftButton = document.querySelector(".carousel-button.left");
       let rightButton = document.querySelector(".carousel-button.right");
 
