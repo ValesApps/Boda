@@ -69,61 +69,51 @@
 
         /* Estilos para el carrusel */
 
-        .carousel-inner {
-          width: 100%;
-          max-height: 500%;
-          overflow: hidden;
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
         }
 
-        .carousel-inner img {
-              max-width: 100%;
-              height: 100%;
-              object-fit: cover;
-         }
-        .carousel {
-            position:relative;
-            width:100%;
-            max-width:800px;
-            margin:auto
-         }
-         .carousel-image{
-             width:100%;
-         }
-         
-         @media (min-width: 800px) {
-           .carousel-image {
-             width: 800px;
-           }
-         .carousel-image-container{
-             display:none
-         }
-         .carousel-image-container.active{
-             display:block;
-             animation-name:fade;
-             animation-duration:1s;
-             animation-fill-mode:both
-         }
-         @keyframes fade{
-             from{opacity:.4}
-             to{opacity:1}
-         }
-         .carousel-button{
-             position:absolute;
-             top:50%;
-             transform:translateY(-50%);
-             background:none;
-             border:none;
-             font-size:2em;
-             color:white;
-             opacity:.7;
-             cursor:pointer
-         }
-         .carousel-button.left{
-             left:.5em
-         }
-         .carousel-button.right{
-             right:.5em
-         }
+        .carousel-inner {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-image {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .carousel-button.left {
+            left: 20px;
+        }
+
+        .carousel-button.right {
+            right: 20px;
+        }
+
 
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
@@ -214,38 +204,30 @@
       }
 
       // Código JavaScript para el carrusel de imágenes
-      let slideIndex = 0;
-      let slides = document.querySelectorAll(".carousel-inner");
-      let leftButton = document.querySelector(".carousel-button.left");
-      let rightButton = document.querySelector(".carousel-button.right");
-
-      // Función para mostrar el slide actual
-      function showSlide() {
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+      function showSlide(index) {
+            slides.forEach(function (slide) {
+                slide.classList.remove("active");
+            });
+            slides[index].classList.add("active");
         }
-        slides[slideIndex].style.display = "block";
-      }
 
-      // Función para avanzar al siguiente slide
-      function nextSlide() {
-        slides[slideIndex].style.display = "none";
-        slideIndex++;
-        if (slideIndex >= slides.length) {
-          slideIndex = 0;
+        // Función para avanzar al siguiente slide
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            showSlide(slideIndex);
         }
-        slides[slideIndex].style.display = "block";
-      }
 
-      // Función para retroceder al slide anterior
-      function prevSlide() {
-        slides[slideIndex].style.display = "none";
-        slideIndex--;
-        if (slideIndex < 0) {
-          slideIndex = slides.length - 1;
+        // Función para retroceder al slide anterior
+        function prevSlide() {
+            slideIndex--;
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            showSlide(slideIndex);
         }
-        slides[slideIndex].style.display = "block";
-      }
 
       // Avanzar automáticamente cada 10 segundos
       setInterval(nextSlide, 10000);
