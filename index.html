@@ -145,22 +145,6 @@
             color: #ffffff;
         }
 
-        #countdown-timer {
-            font-family: 'Noto Serif TC', serif;
-            font-size: 42px;
-            font-weight: bold;
-            margin-top: 20px;
-            color: #ffffff;
-            text-shadow: -5px 3px 3px #7d7f7d;
-        }
-    
-      .countdown-label {
-        color: #fef5ee;
-        font-size: 18px;
-        text-shadow: -3px 3px 3px #808080;
-        font-family: 'Noto Serif TC', serif;
-        margin-top: 5px;
-     }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,16 +163,22 @@
           <h2 style="color: #fef5ee; font-size: 24px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">¡NOS CASAMOS!</h2>
           <h2 style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Fecha: 21/10/2023</h2>
           <h2 style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Faltan:</h2>
-          <div id="countdown-timer">
-                <span id="days"></span>
-                <span class="countdown-label">días</span>
-                <span id="hours"></span>
-                <span class="countdown-label">horas</span>
-                <span id="minutes"></span>
-                <span class="countdown-label">minutos</span>
-                <span id="seconds"></span>
-                <span class="countdown-label">segundos</span>
-         </div>
+          <section>
+        <table align="center" width="90%">
+            <tr>
+                <td><span id="days"></span></td>
+                <td><span id="hours"></span></td>
+                <td><span id="minutes"></span></td>
+                <td><span id="seconds"></span></td>
+            </tr>
+            <tr id="countdown-labels">
+                <th>Días</th>
+                <th>Horas</th>
+                <th>Minutos</th>
+                <th>Segundos</th>
+            </tr>
+        </table>
+    </section>
 
       </div>
 
@@ -324,32 +314,26 @@
         const weddingDate = new Date('October 21, 2023 00:00:00').getTime();
 
         function updateCountdown() {
-          const now = new Date().getTime();
-          const distance = weddingDate - now;
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
 
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-              countdownElement.textContent = `${days} `;
-              document.getElementById('days-label').textContent = 'días ';
+            // Actualizar las celdas de la tabla con los valores de la cuenta regresiva
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
 
-              countdownElement.textContent += `${hours} `;
-              document.getElementById('hours-label').textContent = 'horas ';
-
-              countdownElement.textContent += `${minutes} `;
-              document.getElementById('minutes-label').textContent = 'minutos ';
-
-              countdownElement.textContent += `${seconds} `;
-              document.getElementById('seconds-label').textContent = 'segundos';
-
-          if (distance < 0) {
+            if (distance < 0) {
                 countdownElement.textContent = "¡Ha llegado el día de nuestra boda!";
-                document.getElementById('countdown-labels').style.display = 'none'; // Ocultar las etiquetas cuando se alcanza la fecha de la boda
-          } else {
-                document.getElementById('countdown-labels').style.display = 'inline'; // Mostrar las etiquetas mientras haya tiempo restante
-          }
+                document.getElementById('countdown-labels').style.display = 'none';
+            } else {
+                document.getElementById('countdown-labels').style.display = 'table-row';
+            }
         }
 
         updateCountdown();
