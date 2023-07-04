@@ -137,7 +137,7 @@
     <div class="carousel">
       <!-- Imágenes del carrusel -->
       <div class="carousel-inner">
-          <img class="carousel-image" src="source/image1.jpg" alt="">
+          <img class="carousel-image active" src="source/image1.jpg" alt="">
           <img class="carousel-image" src="source/image2.jpg" alt="">
           <img class="carousel-image" src="source/image3.jpg" alt="">
           <img class="carousel-image" src="source/image4.jpg" alt="">
@@ -169,8 +169,8 @@
       </div>
 
       <!-- Botones del carrusel -->
-      <button class="carousel-button left">&lt;</button>
-      <button class="carousel-button right">&gt;</button>
+      <button class="carousel-button left"><</button>
+      <button class="carousel-button right">></button>
     </div>
 
     <main>
@@ -204,35 +204,37 @@
       }
 
       // Código JavaScript para el carrusel de imágenes
-      var slides = document.querySelectorAll(".carousel-image");
       var slideIndex = 0;
+      var slides = document.querySelectorAll(".carousel-image");
       var leftButton = document.querySelector(".carousel-button.left");
       var rightButton = document.querySelector(".carousel-button.right");
 
+       // Función para mostrar el slide actual
       function showSlide() {
-        slides.forEach(function (slide) {
-          slide.style.display = "none";
-        });
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
         slides[slideIndex].style.display = "block";
       }
 
-        // Función para avanzar al siguiente slide
-        function nextSlide() {
+      // Función para avanzar al siguiente slide
+      function nextSlide() {
+        slides[slideIndex].style.display = "none";
         slideIndex++;
         if (slideIndex >= slides.length) {
           slideIndex = 0;
         }
-        showSlide();
+        slides[slideIndex].style.display = "block";
       }
 
-
-        // Función para retroceder al slide anterior
-        function prevSlide() {
+      // Función para retroceder al slide anterior
+      function prevSlide() {
+        slides[slideIndex].style.display = "none";
         slideIndex--;
         if (slideIndex < 0) {
           slideIndex = slides.length - 1;
         }
-        showSlide();
+        slides[slideIndex].style.display = "block";
       }
 
       // Avanzar automáticamente cada 10 segundos
