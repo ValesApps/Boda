@@ -153,8 +153,14 @@
             color: #ffffff;
             text-shadow: -5px 3px 3px #7d7f7d;
         }
-
-
+    
+      .countdown-label {
+        color: #fef5ee;
+        font-size: 18px;
+        text-shadow: -3px 3px 3px #808080;
+        font-family: 'Noto Serif TC', serif;
+        margin-top: 5px;
+     }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -174,12 +180,17 @@
           <h2 style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Fecha: 21/10/2023</h2>
           <h2 style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Faltan:</h2>
           <div id="countdown-timer"></div>
-          <div id="countdown-labels">
-      <span style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif" id="days-label">días</span>
-      <span style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif" id="hours-label">horas</span>
-      <span style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif" id="minutes-label">minutos</span>
-      <span style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif" id="seconds-label">segundos</span>
-</div>
+          <div id="countdown-timer">
+                <span id="days"></span>
+                <span class="countdown-label">días</span>
+                <span id="hours"></span>
+                <span class="countdown-label">horas</span>
+                <span id="minutes"></span>
+                <span class="countdown-label">minutos</span>
+                <span id="seconds"></span>
+                <span class="countdown-label">segundos</span>
+         </div>
+
       </div>
 
       <button id="pause-button">⏸️</button>
