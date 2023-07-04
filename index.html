@@ -144,6 +144,17 @@
             margin-bottom: 10px;
             color: #ffffff;
         }
+        .centered-paragraph {
+            text-align: center;
+        }
+
+        .centered-paragraph p {
+            display: inline-block;
+            text-align: justify;
+            margin: 0 auto;
+            max-width: 90%;
+        }
+
 
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -185,7 +196,9 @@
       <button id="play-button">▶️</button>
     </header>
     
-    <div id="spacer"></div>
+    <div id="spacer" class="centered-paragraph">
+        <p>No creía en el destino hasta que nuestras vidas se cruzaron y el amor floreció entre nosotros.</p>
+    </div>
 
     <!-- Carrusel de imágenes -->
     <div class="carousel">
@@ -227,17 +240,7 @@
       <button class="carousel-button right">></button>
     </div>
     
-    <div id="spacer">
-        <p display: flex;
-              align-items: center;
-              justify-content: center;
-              flex-direction: column;
-              height: 100px;
-              text-align: center;
-              margin: 0;>
-            No creía en el destino hasta que nuestras vidas se cruzaron y el amor floreció entre nosotros.
-        </p>
-    </div>
+    <div id="spacer"></div>
     <main>
       <!-- Contenido principal de la página -->
     </main>
