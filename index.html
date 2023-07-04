@@ -119,6 +119,28 @@
         .carousel-button.right {
             right: 20px;
         }
+        #wedding-info {
+            background-color: #f7f7f7;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #wedding-info h2 {
+            color: #423c91;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #wedding-info p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #countdown-timer {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
 
 
     </style>
@@ -133,7 +155,10 @@
     </div>
     <header>
       <div id="content">
-          <h1><span style="color:#c6ca76;">Nos casamos</span> Martha y Ricardo</h1>
+          <h1><span style="color:#c6ca76;">M&R</span></h1>
+          <p>¡Nos casamos!</p>
+          <p>Fecha: 21/10/2023</p>
+          <div id="countdown-timer"></div>
       </div>
       <button id="pause-button">⏸️</button>
       <button id="play-button">▶️</button>
@@ -187,6 +212,12 @@
     <main>
       <!-- Contenido principal de la página -->
     </main>
+        <!-- Información de la boda -->
+        <section id="wedding-info">
+            <h2>¡Nos casamos!</h2>
+            <p>Fecha: 21/10/2023</p>
+            <div id="countdown-timer"></div>
+        </section>
 
     <script>
       // Código JavaScript para mostrar el mensaje emergente y reproducir la música
@@ -257,6 +288,28 @@
       // Agregar eventos a los botones del carrusel
       leftButton.addEventListener("click", prevSlide);
       rightButton.addEventListener("click", nextSlide);
+        // Código JavaScript para la cuenta regresiva
+        const countdownElement = document.getElementById('countdown-timer');
+        const weddingDate = new Date('October 21, 2023 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                countdownElement.textContent = "¡Ha llegado el día de nuestra boda!";
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
