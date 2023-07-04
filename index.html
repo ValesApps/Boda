@@ -80,7 +80,7 @@
         }
 
         .carousel-inner {
-            display: none;
+            display: flex;
             position: absolute;
             top: 0;
             left: 0;
@@ -89,7 +89,7 @@
         }
 
         .carousel-image {
-            width: auto;
+            width: 100%;
             height: 100%;
             object-fit: cover;
         }
@@ -140,32 +140,7 @@
           <img class="carousel-image active" src="source/image1.jpg" alt="">
           <img class="carousel-image" src="source/image2.jpg" alt="">
           <img class="carousel-image" src="source/image3.jpg" alt="">
-          <img class="carousel-image" src="source/image4.jpg" alt="">
-          <img class="carousel-image" src="source/image5.jpg" alt="">
-          <img class="carousel-image" src="source/image6.jpg" alt="">
-          <img class="carousel-image" src="source/image7.jpg" alt="">
-          <img class="carousel-image" src="source/image8.jpg" alt="">
-          <img class="carousel-image" src="source/image9.jpg" alt="">
-          <img class="carousel-image" src="source/image10.jpg" alt="">
-          <img class="carousel-image" src="source/image11.jpg" alt="">
-          <img class="carousel-image" src="source/image12.jpg" alt="">
-          <img class="carousel-image" src="source/image13.jpg" alt="">
-          <img class="carousel-image" src="source/image14.jpg" alt="">
-          <img class="carousel-image" src="source/image15.jpg" alt="">
-          <img class="carousel-image" src="source/image16.jpg" alt="">
-          <img class="carousel-image" src="source/image17.jpg" alt="">
-          <img class="carousel-image" src="source/image18.jpg" alt="">
-          <img class="carousel-image" src="source/image19.jpg" alt="">
-          <img class="carousel-image" src="source/image20.jpg" alt="">
-          <img class="carousel-image" src="source/image21.jpg" alt="">
-          <img class="carousel-image" src="source/image22.jpg" alt="">
-          <img class="carousel-image" src="source/image23.jpg" alt="">
-          <img class="carousel-image" src="source/image24.jpg" alt="">
-          <img class="carousel-image" src="source/image2.jpg" alt="">
-          <img class="carousel-image" src="source/image25.jpg" alt="">
-          <img class="carousel-image" src="source/image26.jpg" alt="">
-          <img class="carousel-image" src="source/image27.jpg" alt="">
-          <img class="carousel-image" src="source/image28.jpg" alt="">
+          <!-- Agrega las demás imágenes aquí -->
       </div>
 
       <!-- Botones del carrusel -->
@@ -209,7 +184,7 @@
       var leftButton = document.querySelector(".carousel-button.left");
       var rightButton = document.querySelector(".carousel-button.right");
 
-       // Función para mostrar el slide actual
+      // Función para mostrar el slide actual
       function showSlide() {
         for (let i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
