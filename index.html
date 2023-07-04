@@ -175,10 +175,10 @@
           <h2 style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Faltan:</h2>
           <div id="countdown-timer"></div>
           <div id="countdown-labels">
-  <span id="days-label">días</span>
-  <span id="hours-label">horas</span>
-  <span id="minutes-label">minutos</span>
-  <span id="seconds-label">segundos</span>
+      <span style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif" id="days-label">días</span>
+      <span style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif" id="hours-label">horas</span>
+      <span style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif" id="minutes-label">minutos</span>
+      <span style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif" id="seconds-label">segundos</span>
 </div>
       </div>
 
@@ -314,34 +314,33 @@
         const weddingDate = new Date('October 21, 2023 00:00:00').getTime();
 
         function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
+          const now = new Date().getTime();
+          const distance = weddingDate - now;
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  countdownElement.textContent = `${days} `;
-  document.getElementById('days-label').textContent = 'días ';
+              countdownElement.textContent = `${days} `;
+              document.getElementById('days-label').textContent = 'días ';
 
-  countdownElement.textContent += `${hours} `;
-  document.getElementById('hours-label').textContent = 'horas ';
+              countdownElement.textContent += `${hours} `;
+              document.getElementById('hours-label').textContent = 'horas ';
 
-  countdownElement.textContent += `${minutes} `;
-  document.getElementById('minutes-label').textContent = 'minutos ';
+              countdownElement.textContent += `${minutes} `;
+              document.getElementById('minutes-label').textContent = 'minutos ';
 
-  countdownElement.textContent += `${seconds} `;
-  document.getElementById('seconds-label').textContent = 'segundos';
+              countdownElement.textContent += `${seconds} `;
+              document.getElementById('seconds-label').textContent = 'segundos';
 
-  if (distance < 0) {
-    countdownElement.textContent = "¡Ha llegado el día de nuestra boda!";
-    document.getElementById('countdown-labels').style.display = 'none'; // Ocultar las etiquetas cuando se alcanza la fecha de la boda
-  } else {
-    document.getElementById('countdown-labels').style.display = 'inline'; // Mostrar las etiquetas mientras haya tiempo restante
-  }
-}
-
+          if (distance < 0) {
+                countdownElement.textContent = "¡Ha llegado el día de nuestra boda!";
+                document.getElementById('countdown-labels').style.display = 'none'; // Ocultar las etiquetas cuando se alcanza la fecha de la boda
+          } else {
+                document.getElementById('countdown-labels').style.display = 'inline'; // Mostrar las etiquetas mientras haya tiempo restante
+          }
+        }
 
         updateCountdown();
         setInterval(updateCountdown, 1000);
