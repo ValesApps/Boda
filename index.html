@@ -241,10 +241,6 @@
 
       document.getElementById("accept-button").onclick = function() {
           document.getElementById("popup").style.display = "none";
-          window.addEventListener("scroll", function () {
-                if (window.pageYOffset > 0) {
-                    popup.style.display = "none";
-                }
           audio.play();
           document.getElementById("pause-button").style.display = "block";
       }
