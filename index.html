@@ -204,30 +204,36 @@
       }
 
       // Código JavaScript para el carrusel de imágenes
-      function showSlide(index) {
-            slides.forEach(function (slide) {
-                slide.classList.remove("active");
-            });
-            slides[index].classList.add("active");
-        }
+      var slides = document.querySelectorAll(".carousel-image");
+      var slideIndex = 0;
+      var leftButton = document.querySelector(".carousel-button.left");
+      var rightButton = document.querySelector(".carousel-button.right");
+
+      function showSlide() {
+        slides.forEach(function (slide) {
+          slide.style.display = "none";
+        });
+        slides[slideIndex].style.display = "block";
+      }
 
         // Función para avanzar al siguiente slide
         function nextSlide() {
-            slideIndex++;
-            if (slideIndex >= slides.length) {
-                slideIndex = 0;
-            }
-            showSlide(slideIndex);
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
         }
+        showSlide();
+      }
+
 
         // Función para retroceder al slide anterior
         function prevSlide() {
-            slideIndex--;
-            if (slideIndex < 0) {
-                slideIndex = slides.length - 1;
-            }
-            showSlide(slideIndex);
+        slideIndex--;
+        if (slideIndex < 0) {
+          slideIndex = slides.length - 1;
         }
+        showSlide();
+      }
 
       // Avanzar automáticamente cada 10 segundos
       setInterval(nextSlide, 10000);
