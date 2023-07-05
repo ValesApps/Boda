@@ -166,18 +166,29 @@
         }
 
         .ceremony-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+        }
 
-.ceremony-container h2 {
-  font-size: 32px;
-  margin: 0;
-}
+        .ceremony-container h2 {
+              font-size: 32px;
+             font-family: 'Noto Serif TC', serif;
+             font-weight: bold;
+            text-shadow: -3px 3px 3px #808080;
+              margin: 0;
+        }
 
+@media screen and (max-width: 768px) {
+      .ceremony-container {
+             height: auto;
+      }
 
+      .ceremony-container h2 {
+            font-size: 40px;
+      }
+    }
 
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
