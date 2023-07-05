@@ -158,24 +158,20 @@
               display: flex;
               flex-wrap: wrap;
               background-color: #ffe9da;
+              justify-content: center; /* Centra los elementos horizontalmente */
         }
 
         .image-container,
         .map-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+              flex: 1; /* Ambos contenedores ocupan el mismo espacio */
+              padding: 10px; /* Añade un espaciado entre ellos */
         }
 
-        .map-container p,
-        .map-container button {
-            margin: 10px 0;
-        }
         .image-container img {
               max-width: 100%;
               height: auto;
         }
+        /* letras ceremonia religiosa*/
         .ceremony-container {
               display: flex;
               align-items: center;
@@ -204,6 +200,9 @@
              text-align: center; /* Alinea el texto al centro horizontalmente */
         }
     }
+        table {
+            margin: 0 auto; /* Centra la tabla horizontalmente */
+        }
 
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -223,7 +222,7 @@
           <h2 style="color: #fef5ee; font-size: 24px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">¡NOS CASAMOS!</h2>
           <h2 style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Fecha: 21/10/2023</h2>
           <h2 style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Faltan:</h2>
-      <table align="center" width="90%">
+      <table  width="90%">
             <tr>
             <td style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="days"></span></td>
             <td style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="hours"></span></td>
@@ -311,6 +310,7 @@
     </a>
   </div>
 </div>
+
 
     <main>
         
