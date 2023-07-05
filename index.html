@@ -136,23 +136,7 @@
         .carousel-button.right {
             right: 20px;
         }
-        #wedding-info {
-            background-color: #ffffff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        #wedding-info h2 {
-            color: #ffffff;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        #wedding-info p {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
+       
         .centered-paragraph {
             text-align: center;
         }
@@ -169,18 +153,22 @@
             
         }
         .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+              display: flex;
+              flex-wrap: wrap;
         }
 
-        .image {
-           flex: 1;
+        .image-container,
+        .map-container {
+              flex: 1 1 50%;
+              padding: 10px;
+              box-sizing: border-box;
         }
 
-        .map {
-           flex: 1;
+        .image-container img {
+              max-width: 100%;
+              height: auto;
         }
+
 
 
     </style>
@@ -273,14 +261,14 @@
     <main>
       <!-- Contenido principal de la página -->
         <div class="container">
-           <div class="image">
-              <img src="source/capilla.png" alt="Imagen">
-           </div>
-           <div class="map">
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.133673010076!2d-103.40266028507347!3d20.664139986197082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ac29b539e17f%3A0xf0c014c10f4c5908!2sParroquia%20de%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe!5e0!3m2!1ses-419!2smx!4v1688510567144!5m2!1ses-419!2smx" style="width: 100%; height: 300px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="image-container">
+    <img src="ruta-a-tu-imagen.jpg" alt="Descripción de la imagen">
+  </div>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.133673010076!2d-103.40266028507347!3d20.664139986197082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ac29b539e17f%3A0xf0c014c10f4c5908!2sParroquia%20de%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe!5e0!3m2!1ses-419!2smx!4v1688510567144!5m2!1ses-419!2smx" style="width: 100%; height: 300px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
 
-           </div>
-        </div>
     </main>
         <!-- Información de la boda -->
 
