@@ -157,36 +157,42 @@
 
         /*MAPA*/
         .container {
-              display: flex;
-              flex-wrap: wrap;
-              background-color: #ffe9da;
-              justify-content: center; /* Centra los elementos horizontalmente */
-        }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-        .image-container {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              max-width: 100%;
-              overflow: hidden;
-        }
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+}
 
-        .image-container img {
-              width: 100%;
-              height: auto;
-        }
-        .map-container {
-              flex: 1; /* Ambos contenedores ocupan el mismo espacio */
-              padding: 10px; /* Añade un espaciado entre ellos */
-        }
-        .button-container {
-              display: flex;
-              justify-content: center;
-        }
-        #location-button {
-          background-color: #ada86d;
-          border: none;
-        }
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.map-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.centered-paragraph {
+  text-align: center;
+  margin: 0;
+}
+
+#location-button {
+  background-color: #ada86d;
+  border: none;
+}
+
 
         /*titulo ceremonia*/
         .tituloceremony-container {
@@ -368,25 +374,25 @@
   
     <div id="spacer"></div>
     <div class="container">
-    <div class="image-container">
-          <img src="source/capilla.png" alt="Capilla">
+  <div class="image-container">
+    <img src="source/capilla.png" alt="Capilla">
+  </div>
+  <div class="map-container">
+    <p class="centered-paragraph">
+      <h2><i class="fas fa-map-marker-alt"></i> DIRECCION</h2>
+      *Parroquia de Nuestra Señora de Guadalupe<br>
+      *Av. Tepeyac 55, Col:Chapalita<br> 
+      *Guadalajara, Jalisco<br>
+      *Hora: 18:00 hrs
+    </p>
+    <div class="button-container">
+      <a href="https://maps.google.com/maps?q=Parroquia%20de%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe,%20AV.%20Tepeyac%2055,%20Col:%20Chapalita,%20Guadalajara,%20Jalisco" target="_blank">
+        <button id="location-button" class="centered-paragraph">Ir a ubicación</button>
+      </a>
     </div>
-   <div class="map-container">
-      <p class="centered-paragraph">
-        <h2><i class="fas fa-map-marker-alt"></i> DIRECCION</h2>
-        *Parroquia de Nuestra Señora de Guadalupe<br>
-        *Av. Tepeyac 55, Col:Chapalita<br> 
-        *Guadalajara, Jalisco<br>
-        *Hora: 18:00 hrs
-     </p>
-  <div class="button-container">
-    <a href="https://maps.google.com/maps?q=Parroquia%20de%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe,%20AV.%20Tepeyac%2055,%20Col:%20Chapalita,%20Guadalajara,%20Jalisco" target="_blank">
-      <button id="location-button"; class="centered-paragraph"; background-color: #ada86d; border: none;>Ir a ubicación</button>
-    </a>
   </div>
 </div>
 
-  </div>
     <main>
         
       <!-- Contenido principal de la página -->
