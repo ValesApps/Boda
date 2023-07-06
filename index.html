@@ -163,7 +163,12 @@
               justify-content: center; /* Centra los elementos horizontalmente */
         }
 
-        .image-container,
+        .image-container {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 200px; /* Ajusta la altura según tus necesidades */
+        }
         .map-container {
               flex: 1; /* Ambos contenedores ocupan el mismo espacio */
               padding: 10px; /* Añade un espaciado entre ellos */
@@ -171,7 +176,7 @@
 
         .image-container img {
               max-width: 100%;
-              height: auto;
+              height: 100%;
         }
         .button-container {
               display: flex;
