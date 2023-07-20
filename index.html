@@ -263,13 +263,20 @@
 
         /* estilos para los nombres*/
         .blessing-container {
-              background-color: #5e5e5e;
-              color: #ffffff;
-              padding: 20px;
-              border-radius: 10px;
-              text-align: center;
-              margin-top: 20px;
+            background-color: #5e5e5e;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+                /* Añade la siguiente propiedad para hacerlo más alto */
+            height: 150px;
+                /* Añade esta propiedad para centrar verticalmente el contenido */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
+
 
         .blessing-container p {
               margin: 0;
@@ -278,6 +285,12 @@
         .blessing-container i {
               margin-right: 5px;
         }
+        
+        .blessing-container h3 {
+             font-size: 24px;
+        }
+
+        
 
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
