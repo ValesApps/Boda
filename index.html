@@ -390,44 +390,49 @@
             font-size: 36px;
             margin-top: 10px;
         }
-        /* Estilos para la sección MESA DE REGALOS */
-  #mesa-de-regalos-section {
-    background-color: #ffffff;
-    color: #5e5e5e;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 20px;
-  }
 
-  #mesa-de-regalos-section h2 {
-    margin: 0;
-    font-size: 24px;
-    text-shadow: -5px 3px 3px #808080;
-    font-family: 'Noto Serif TC', serif;
-  }
+        /* Estilos para la nueva sección MESA DE REGALOS */
+        #mesa-de-regalos-section {
+            background-color: #ffffff;
+            color: #5e5e5e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-  #mesa-de-regalos-section p {
-    font-size: 18px;
-    font-family: 'Noto Serif TC', serif;
-  }
+        #mesa-de-regalos-section h2 {
+            margin: 0;
+            font-size: 24px;
+            text-shadow: -5px 3px 3px #808080;
+            font-family: 'Noto Serif TC', serif;
+        }
 
-  #mesa-de-regalos-button {
-    background-color: #ada86d;
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    color: #ffffff;
-    font-size: 18px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-family: 'Noto Serif TC', serif;
-    text-decoration: none;
-  }
+        #mesa-de-regalos-section p {
+            font-size: 18px;
+            font-family: 'Noto Serif TC', serif;
+            margin-bottom: 10px;
+        }
 
-  #mesa-de-regalos-button:hover {
-    background-color: #cab700;
-  }
+        #mesa-de-regalos-button {
+            background-color: #ada86d;
+            border: none;
+            cursor: pointer;
+            padding: 8px 15px; /* Tamaño del botón más pequeño */
+            color: #ffffff;
+            font-size: 16px; /* Tamaño de fuente reducido */
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-family: 'Noto Serif TC', serif;
+            text-decoration: none;
+        }
+
+        #mesa-de-regalos-button:hover {
+            background-color: #cab700;
+        }
 
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -626,15 +631,12 @@
 </div>
 
     <!-- Nueva sección MESA DE REGALOS -->
-<div id="mesa-de-regalos-section" class="centered-paragraph">
-    <h2>Mesa de Regalos <i class="fas fa-gift"></i></h2>
-    <p>Si deseas mostrar un detalle por nuestra unión, puedes ingresar a nuestra mesa de regalos.</p>
-    <div class="button-container">
-        <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51205311" target="_blank">
-            <button id="mesa-de-regalos-button" class="centered-paragraph">Ir a Mesa de Regalos</button>
-        </a>
+    <div id="mesa-de-regalos-section">
+        <h2>Mesa de Regalos <i class="fas fa-gift"></i></h2>
+        <p>Si deseas mostrar un detalle por nuestra unión, puedes ingresar a la mesa de regalos.</p>
+        <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51205311" target="_blank" id="mesa-de-regalos-button">Ir a Mesa de Regalos</a>
     </div>
-</div>
+    
 
 
     
