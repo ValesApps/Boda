@@ -292,6 +292,38 @@
         font-size: 20px; /* Ajusta el tamaño del icono según tus preferencias */
     }
 
+        /* Estilos para la sección SALÓN */
+        #salon-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #salon-section h2 {
+            font-size: 32px;
+            color: #5e5e5e;
+        }
+
+    /* Estilos para la sección del mapa */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .map-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #location-button {
+            background-color: #ada86d;
+            border: none;
+        }
+
+
 
         
 
@@ -443,6 +475,30 @@
 
 
     </main>
+    <!-- Salon -->
+    <div id="salon-section">
+        <h2 style="text-align: center;">SALÓN <i class="fas fa-store"></i></h2>
+        <div class="image-container">
+            <img src="source/salon.png" alt="Salón">
+        </div>
+     </div>
+    
+    <div class="container">
+    <div class="map-container">
+        <p class="centered-paragraph">
+            <h2>Olimpo Salón de Eventos</h2>
+            C. Agua Marina 2700, Col Agua Blanca Sur, CP 45235, Zapopan, Jalisco.<br>
+            Hora: 20:00 hrs
+        </p>
+        <div class="button-container">
+            <a href="https://goo.gl/maps/hoHYFeryaqmW5xgi7" target="_blank">
+                <button id="location-button" class="centered-paragraph">Ver Ubicación</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+    
     <div id="spacer"></div>
         <!-- Información de la boda -->
 
