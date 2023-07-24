@@ -675,13 +675,19 @@
         <p>Si deseas mostrar un detalle por nuestra unión, puedes ingresar a la mesa de regalos.</p>
         <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51205311" target="_blank" id="mesa-de-regalos-button">Ir a Mesa de Regalos</a>
     </div>
-    <!-- Agrega esta sección donde desees mostrar el enlace al formulario -->
+    <!-- enlace al formulario -->
 <div class="confirmation-form-container">
     <p>¡Confirma tu asistencia!</p>
     <a href="https://forms.gle/UFDTfqem1hEhVhZv6" target="_blank">
         <button>Confirmar Asistencia</button>
     </a>
 </div>
+ <!-- Agregar candelario  -->
+    <div id="agregar-al-calendario-section" class="confirmation-form-container">
+    <p>Agrega nuestra boda a tu calendario:</p>
+    <button id="agregar-al-calendario-button">Agregar al Calendario</button>
+</div>
+
 
     
     
@@ -798,6 +804,14 @@
 
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+        //calendario
+
+        document.getElementById("agregar-al-calendario-button").onclick = function() {
+    const googleCalendarLink = "https://www.google.com/calendar/render?action=TEMPLATE&text=Nuestra+Boda&dates=20231021T180000/20231021T230000&details=¡No te pierdas nuestra boda!&location=Parroquia+de+Nuestra+Se%C3%B1ora+de+Guadalupe,+AV.+Tepeyac+55,+Col:+Chapalita,+Guadalajara,+Jalisco";
+    window.open(googleCalendarLink, "_blank");
+};
+
 
 
         
