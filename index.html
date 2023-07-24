@@ -690,32 +690,30 @@
 
     <script>
       // Código JavaScript para mostrar el mensaje emergente y reproducir la música
-  var audio = new Audio("source/cancion.mp3");
+      window.onload = function() {
+          document.getElementById("popup").style.display = "flex";
+      }
 
-  window.onload = function() {
-    document.getElementById("popup").style.display = "flex";
-    audio.play();
-    document.getElementById("pause-button").style.display = "block";
-  }
+      var audio = new Audio("source/cancion.mp3");
 
-  document.getElementById("accept-button").onclick = function() {
-    document.getElementById("popup").style.display = "none";
-    audio.pause();
-    document.getElementById("pause-button").style.display = "none";
-    document.getElementById("play-button").style.display = "block";
-  }
+      document.getElementById("accept-button").onclick = function() {
+          document.getElementById("popup").style.display = "none";
+          audio.play();
+          document.getElementById("pause-button").style.display = "block";
+      }
 
-  document.getElementById("pause-button").onclick = function() {
-    audio.pause();
-    document.getElementById("pause-button").style.display = "none";
-    document.getElementById("play-button").style.display = "block";
-  }
+      document.getElementById("pause-button").onclick = function() {
+          audio.pause();
+          document.getElementById("pause-button").style.display = "none";
+          document.getElementById("play-button").style.display = "block";
+      }
 
-  document.getElementById("play-button").onclick = function() {
-    audio.play();
-    document.getElementById("play-button").style.display = "none";
-    document.getElementById("pause-button").style.display = "block";
-  }
+      document.getElementById("play-button").onclick = function() {
+          audio.play();
+          document.getElementById("play-button").style.display = "none";
+          document.getElementById("pause-button").style.display = "block";
+      }
+
 
   // Código JavaScript para detener la música al hacer clic en los enlaces
   var links = document.querySelectorAll("a");
