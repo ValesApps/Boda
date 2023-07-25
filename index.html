@@ -750,25 +750,21 @@
         <button>Confirmar Asistencia</button>
     </a>
 </div>
- <!-- Agregar candelario  -->
+ <!-- Agregar candelario -->
 <div id="agregar-al-calendario-section" class="confirmation-form-container">
     <p>Agrega nuestra boda a tu calendario:</p>
-    <div class="dropdown">
-        <button class="dropdown-button">Selecciona tu calendario</button>
-        <div class="dropdown-content">
-            <div class="option" id="android-option">
-                <img src="android-icon.png" alt="Android" class="option-icon">
-                <span>Android</span>
-            </div>
-            <div class="option" id="ios-option">
-                <img src="ios-icon.png" alt="iOS" class="option-icon">
-                <span>iOS</span>
-            </div>
+    <button id="agregar-al-calendario-button">Agregar al Calendario</button>
+    <div id="calendar-options" style="display: none;">
+        <div id="android-option" onclick="addToCalendar('android')">
+            <img src="ruta_del_icono_android.png" alt="Android" style="width: 24px; height: 24px;">
+            Android
+        </div>
+        <div id="ios-option" onclick="addToCalendar('ios')">
+            <img src="ruta_del_logo_ios.png" alt="iOS" style="width: 24px; height: 24px;">
+            iOS
         </div>
     </div>
-    <button id="agregar-al-calendario-button">Agregar al Calendario</button>
 </div>
-
 
     
     
