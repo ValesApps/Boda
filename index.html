@@ -796,19 +796,20 @@
       document.getElementById("pause-button").style.display = "none";
       document.getElementById("play-button").style.display = "block";
     });
+      // Obtener el enlace "Agregar al Calendario" y el botón para pausar la música
+const agregarAlCalendarioLink = document.getElementById('agregar-al-calendario-link');
+const pauseButton = document.getElementById('pause-button');
+
+// Agregar un evento click al enlace "Agregar al Calendario"
+agregarAlCalendarioLink.addEventListener('click', function() {
+    // Detener la música
+    audio.pause();
+    // Ocultar el botón de pausa y mostrar el botón de reproducción
+    pauseButton.style.display = 'none';
+    playButton.style.display = 'block';
+});
   });
 
-        // Obtener referencia al botón "Agregar al Calendario"
-    var agregarAlCalendarioButton = document.getElementById('agregar-al-calendario-button');
-
-    // Obtener referencia al elemento de audio
-    var audio = document.getElementsByTagName('audio')[0];
-
-    // Agregar un evento click al botón "Agregar al Calendario"
-    agregarAlCalendarioButton.addEventListener('click', function () {
-        // Detener la reproducción de la música
-        audio.pause();
-    });
 
         
       // Código JavaScript para el carrusel de imágenes
