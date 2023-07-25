@@ -750,22 +750,11 @@
         <button>Confirmar Asistencia</button>
     </a>
 </div>
- <!-- Agregar candelario -->
+ <!-- Nueva sección AGREGAR AL CALENDARIO -->
 <div id="agregar-al-calendario-section" class="confirmation-form-container">
     <p>Agrega nuestra boda a tu calendario:</p>
     <button id="agregar-al-calendario-button">Agregar al Calendario</button>
-    <div id="calendar-options" style="display: none;">
-        <div id="android-option" onclick="addToCalendar('android')">
-            <img src="ruta_del_icono_android.png" alt="Android" style="width: 24px; height: 24px;">
-            Android
-        </div>
-        <div id="ios-option" onclick="addToCalendar('ios')">
-            <img src="ruta_del_logo_ios.png" alt="iOS" style="width: 24px; height: 24px;">
-            iOS
-        </div>
-    </div>
 </div>
-
     
     
     <div id="spacer"></div>
@@ -884,39 +873,38 @@
 
         //calendario
 
-        // Función para mostrar/ocultar la lista desplegable con las opciones
-function toggleCalendarOptions() {
-    const calendarOptions = document.getElementById('calendar-options');
-    if (calendarOptions.style.display === 'none') {
-        calendarOptions.style.display = 'block';
+        document.getElementById("agregar-al-calendario-button").onclick = function() {
+    // Formatear la fecha de inicio y fin para el evento
+    const startDate = new Date('2023-10-21T18:00:00');
+    const endDate = new Date('2023-10-21T23:00:00');
+
+    // Crear la URL para agregar el evento al calendario (Google Calendar y otros)
+    const googleCalendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=Nuestra+Boda&dates=${startDate.toISOString().replace(/-|:|\.\d+/g, "")}/${endDate.toISOString().replace(/-|:|\.\d+/g, "")}&details=¡No+te+pierdas+nuestra+boda!&location=Parroquia+de+Nuestra+Señora+de+Guadalupe,+AV.+Tepeyac+550,+Col:+Chapalita,+Guadalajara,+Jalisco`;
+
+    // Enlace para dispositivos iOS (iPhone, iPad)
+    const iOsCalendarLink = `webcal://www.google.com/calendar/event?text=Nuestra+Boda&dates=${startDate.toISOString().replace(/-|:|\.\d+/g, "")}/${endDate.toISOString().replace(/-|:|\.\d+/g, "")}&details=¡No+te+pierdas+nuestra+boda!&location=Parroquia+de+Nuestra+Señora+de+Guadalupe,+AV.+Tepeyac+550,+Col:+Chapalita,+Guadalajara,+Jalisco`;
+
+    // Intentar abrir primero el enlace para iOS y, si falla, abrir el enlace para otros dispositivos
+    const openInIos = () => {
+      window.open(iOsCalendarLink, "_blank");
+      window.location.href = googleCalendarLink;
+    };
+
+    // Intentar abrir el enlace para iOS
+    if (navigator.platform.match(/iPhone|iPad|iPod/)) {
+      // Verificar si es un dispositivo iOS (iPhone, iPad, iPod)
+      if (navigator.standalone) {
+        // Si la aplicación está en modo de pantalla completa (sin navegador), abrir el enlace en una nueva pestaña
+        openInIos();
+      } else {
+        // Si no está en modo de pantalla completa (con navegador), mostrar una ventana emergente con instrucciones
+        alert("Para agregar el evento a tu calendario, selecciona 'Abrir' cuando se te solicite abrir la aplicación Calendario.");
+      }
     } else {
-        calendarOptions.style.display = 'none';
+      // Si no es un dispositivo iOS, abrir el enlace para otros dispositivos
+      window.open(googleCalendarLink, "_blank");
     }
-}
-
-// Función para agregar el evento al calendario correspondiente (Android o iOS)
-function addToCalendar(platform) {
-    const eventName = "Nuestra Boda";
-    const eventDate = "2023-10-21T18:00:00";
-    const eventEndDate = "2023-10-21T23:00:00";
-    const eventDetails = "¡No te pierdas nuestra boda!";
-    const eventLocation = "Parroquia de Nuestra Señora de Guadalupe, AV. Tepeyac 550, Col: Chapalita, Guadalajara, Jalisco";
-
-    if (platform === 'android') {
-        const googleCalendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventName)}&dates=${encodeURIComponent(eventDate)}/${encodeURIComponent(eventEndDate)}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;
-        window.open(googleCalendarLink, "_blank");
-    } else if (platform === 'ios') {
-        const iCalLink = `webcal://p46-calendarws.icloud.com/ca/subscribe/1/1TH7U0GQF9h26PJvVJxHb-7HlEQ26v8S0fJ-OqDK9Qu7owEtdTD3r7s2fE_G7F6y_H2f2rsoa02zECEAKTYvAtPwmge2esijQ0dtUaT4woQ`;
-        window.open(iCalLink, "_blank");
-    }
-
-    // Ocultar la lista desplegable después de agregar al calendario
-    const calendarOptions = document.getElementById('calendar-options');
-    calendarOptions.style.display = 'none';
-}
-
-// Agregar evento para mostrar/ocultar la lista desplegable al hacer clic en el botón
-document.getElementById('agregar-al-calendario-button').addEventListener('click', toggleCalendarOptions);
+  };
 
 
 
