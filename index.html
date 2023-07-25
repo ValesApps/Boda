@@ -473,6 +473,74 @@
         background-color: #cab700;
     }
 
+        /* Estilos para el botón y opciones desplegables del candelario */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background-color: #ada86d;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-family: 'Noto Serif TC', serif;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.option-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.option span {
+    font-family: 'Noto Serif TC', serif;
+}
+
+/* Mostrar el contenido al hacer hover o clic */
+.dropdown:hover .dropdown-content,
+.dropdown:focus .dropdown-content {
+    display: block;
+}
+        /* Estilos responsivos del calendario */
+/* Ajustar tamaño del botón en pantallas pequeñas */
+@media screen and (max-width: 480px) {
+  .dropdown-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Alinear el botón "Agregar al Calendario" al centro en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  #agregar-al-calendario-section {
+    text-align: center;
+  }
+}
+
+
+
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -683,8 +751,21 @@
     </a>
 </div>
  <!-- Agregar candelario  -->
-    <div id="agregar-al-calendario-section" class="confirmation-form-container">
+<div id="agregar-al-calendario-section" class="confirmation-form-container">
     <p>Agrega nuestra boda a tu calendario:</p>
+    <div class="dropdown">
+        <button class="dropdown-button">Selecciona tu calendario</button>
+        <div class="dropdown-content">
+            <div class="option" id="android-option">
+                <img src="android-icon.png" alt="Android" class="option-icon">
+                <span>Android</span>
+            </div>
+            <div class="option" id="ios-option">
+                <img src="ios-icon.png" alt="iOS" class="option-icon">
+                <span>iOS</span>
+            </div>
+        </div>
+    </div>
     <button id="agregar-al-calendario-button">Agregar al Calendario</button>
 </div>
 
@@ -807,10 +888,40 @@
 
         //calendario
 
-        document.getElementById("agregar-al-calendario-button").onclick = function() {
-    const googleCalendarLink = "https://www.google.com/calendar/render?action=TEMPLATE&text=Nuestra+Boda&dates=20231021T180000/20231021T230000&details=¡No te pierdas nuestra boda!&location=Parroquia+de+Nuestra+Se%C3%B1ora+de+Guadalupe,+AV.+Tepeyac+550,+Col:+Chapalita,+Guadalajara,+Jalisco";
-    window.open(googleCalendarLink, "_blank");
-};
+        // Función para mostrar/ocultar la lista desplegable con las opciones
+function toggleCalendarOptions() {
+    const calendarOptions = document.getElementById('calendar-options');
+    if (calendarOptions.style.display === 'none') {
+        calendarOptions.style.display = 'block';
+    } else {
+        calendarOptions.style.display = 'none';
+    }
+}
+
+// Función para agregar el evento al calendario correspondiente (Android o iOS)
+function addToCalendar(platform) {
+    const eventName = "Nuestra Boda";
+    const eventDate = "2023-10-21T18:00:00";
+    const eventEndDate = "2023-10-21T23:00:00";
+    const eventDetails = "¡No te pierdas nuestra boda!";
+    const eventLocation = "Parroquia de Nuestra Señora de Guadalupe, AV. Tepeyac 550, Col: Chapalita, Guadalajara, Jalisco";
+
+    if (platform === 'android') {
+        const googleCalendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventName)}&dates=${encodeURIComponent(eventDate)}/${encodeURIComponent(eventEndDate)}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;
+        window.open(googleCalendarLink, "_blank");
+    } else if (platform === 'ios') {
+        const iCalLink = `webcal://p46-calendarws.icloud.com/ca/subscribe/1/1TH7U0GQF9h26PJvVJxHb-7HlEQ26v8S0fJ-OqDK9Qu7owEtdTD3r7s2fE_G7F6y_H2f2rsoa02zECEAKTYvAtPwmge2esijQ0dtUaT4woQ`;
+        window.open(iCalLink, "_blank");
+    }
+
+    // Ocultar la lista desplegable después de agregar al calendario
+    const calendarOptions = document.getElementById('calendar-options');
+    calendarOptions.style.display = 'none';
+}
+
+// Agregar evento para mostrar/ocultar la lista desplegable al hacer clic en el botón
+document.getElementById('agregar-al-calendario-button').addEventListener('click', toggleCalendarOptions);
+
 
 
 
