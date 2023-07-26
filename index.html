@@ -542,16 +542,7 @@
   }
 }
 
-      /* Agrega esta clase para ocultar inicialmente las letras */
-        .hidden-title span {
-            opacity: 0;
-        }
-
-    /* Agrega transición para que la aparición sea gradual */
-        .appear span {
-            opacity: 1;
-            transition: opacity 1s ease-in;
-        }
+      
 
         /* lo demas del header*/
         /* Ocultar inicialmente los elementos con la clase "appear" */
@@ -581,7 +572,7 @@
     </div>
     <header>
       <div id="content">
-          <h1 id="title" class="hidden-title">
+          <h1 id="title" class="appear">
             <span style="position: relative; top: 60px; margin-top: 60px;">M</span>
             <span style="position: relative; top: 60px; margin-top: 60px;">&</span>
             <span style="position: relative; top: 60px; margin-top: 60px;">R</span>
