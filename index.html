@@ -545,7 +545,7 @@
       /* clase para el efecto de aparición con desvanecimiento */
         .fade-in {
             opacity: 0;
-            transition: opacity 5s ease-in;
+            transition: opacity 10s ease-in;
         }
 
     </style>
@@ -783,8 +783,9 @@
           audio.play();
           document.getElementById("pause-button").style.display = "block";
 
-          
-          var titleElement = document.getElementById("title");  
+           // Eliminar la clase "fade-out" si existiera, en caso de que se haya agregado previamente
+            var titleElement = document.getElementById("title");
+            titleElement.classList.remove("fade-out");
           // Agregar la clase "fade-in" a las letras M&R para el efecto de desvanecimiento mientras aparecen
             titleElement.classList.add("fade-in");
             // Retardar el cambio de opacidad para que el efecto sea visible al agregar la clase
