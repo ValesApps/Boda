@@ -542,18 +542,17 @@
   }
 }
 
-      /* Agrega esta clase para el efecto de aparición con desvanecimiento */
-        .fade-in {
+      /* Agrega esta clase para ocultar inicialmente las letras */
+        .hidden-title span {
             opacity: 0;
-            animation: fadeInAnimation 1s ease-in forwards;
         }
 
-        /* Definir la animación de desvanecimiento */
-@keyframes fadeInAnimation {
-    to {
-        opacity: 1;
-    }
-}
+    /* Agrega transición para que la aparición sea gradual */
+        .appear {
+            opacity: 1;
+            transition: opacity 1s ease-in;
+        }
+
 
 
     </style>
@@ -570,10 +569,10 @@
     </div>
     <header>
       <div id="content">
-          <h1 id="title">
-            <span style="position: relative; top: 60px; margin-top: 60px; class="fade-in"">M</span>
-            <span style="position: relative; top: 60px; margin-top: 60px; class="fade-in"">&</span>
-            <span style="position: relative; top: 60px; margin-top: 60px; class="fade-in"">R</span>
+          <h1 id="title" class="hidden-title">
+            <span style="position: relative; top: 60px; margin-top: 60px;">M</span>
+            <span style="position: relative; top: 60px; margin-top: 60px;">&</span>
+            <span style="position: relative; top: 60px; margin-top: 60px;">R</span>
           </h1>
           <h2 style="color: #fef5ee; font-size: 26px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">¡NOS CASAMOS!</h2>
           <h2 style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Fecha: 21/10/2023<</h2>
@@ -790,16 +789,10 @@
           document.getElementById("popup").style.display = "none";
           audio.play();
           document.getElementById("pause-button").style.display = "block";
-
-           // Eliminar la clase "fade-out" si existiera, en caso de que se haya agregado previamente
-            var titleElement = document.getElementById("title");
-            titleElement.classList.remove("fade-out");
-          // Agregar la clase "fade-in" a las letras M&R para el efecto de desvanecimiento mientras aparecen
-            titleElement.classList.add("fade-in");
-            // Retardar el cambio de opacidad para que el efecto sea visible al agregar la clase
-            setTimeout(function() {
-            titleElement.style.opacity = "1";
-            }, 0);
+          // Eliminar la clase "hidden-title" para que las letras aparezcan gradualmente
+      var titleElement = document.getElementById("title");
+          titleElement.classList.remove("hidden-title");
+          titleElement.classList.add("appear");
       }
 
       document.getElementById("pause-button").onclick = function() {
