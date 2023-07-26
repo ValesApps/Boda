@@ -580,14 +580,14 @@
           <h2 class="appear" style="color: #fef5ee; font-size: 26px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">¡NOS CASAMOS!</h2>
           <h2 class="appear" style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Fecha: 21/10/2023</h2>
           <h2 class="appear" style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Ya Falta Poco:</h2>
-      <table  width="90%">
+      <table  width="90%" class="appear">
             <tr>
             <td style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="days"></span></td>
             <td style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="hours"></span></td>
             <td style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="minutes"></span></td>
             <td style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="seconds"></span></td>
         </tr>
-        <tr id="countdown-labels">
+        <tr id="countdown-labels" class="appear">
             <th style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Días</th>
             <th style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Horas</th>
             <th style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Minutos</th>
@@ -793,10 +793,6 @@
           audio.play();
           document.getElementById("pause-button").style.display = "block";
           
-          // Eliminar la clase "hidden-title" para que las letras aparezcan gradualmente
-      var titleElement = document.getElementById("title");
-          titleElement.classList.remove("hidden-title");
-          titleElement.classList.add("appear");
       }
 
       document.getElementById("pause-button").onclick = function() {
