@@ -820,7 +820,10 @@
           document.getElementById("pause-button").style.display = "block";
       }
 
-        const elementsToAppear = document.querySelectorAll(".appear");
+        document.addEventListener("DOMContentLoaded", function () {
+    // Obtén el botón "Aceptar" y los elementos con la clase "appear"
+    const btnAceptar = document.getElementById("accept-button");
+    const elementsToAppear = document.querySelectorAll(".appear");
 
     // Agrega un controlador de eventos al botón "Aceptar"
     btnAceptar.addEventListener("click", function () {
@@ -830,7 +833,8 @@
           element.classList.add("show");
         }, 300 * index); // Ajusta el valor del retraso (en milisegundos) para cambiar la secuencia de aparición
       });
-
+    });
+  });
 
   // Código JavaScript para detener la música al hacer clic en los enlaces
   var links = document.querySelectorAll("a");
