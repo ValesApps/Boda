@@ -542,9 +542,10 @@
   }
 }
 
-        .fade-out {
+      /* clase para el efecto de aparición con desvanecimiento */
+        .fade-in {
             opacity: 0;
-            transition: opacity 1s ease-out;
+            transition: opacity 1s ease-in;
         }
 
     </style>
@@ -781,9 +782,10 @@
           document.getElementById("popup").style.display = "none";
           audio.play();
           document.getElementById("pause-button").style.display = "block";
+          
           // Agregar la clase "fade-out" a las letras M&R después de hacer clic en el botón
         var titleElement = document.getElementById("title");
-        titleElement.classList.add("fade-out");
+        titleElement.classList.add("fade-in");
       }
 
       document.getElementById("pause-button").onclick = function() {
