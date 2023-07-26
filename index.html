@@ -806,16 +806,6 @@
       var titleElement = document.getElementById("title");
           titleElement.classList.remove("hidden-title");
           titleElement.classList.add("appear");
-          const elementsToAppear = document.querySelectorAll(".appear");
-
-    // Agrega un controlador de eventos al botón "Aceptar"
-    btnAceptar.addEventListener("click", function () {
-      // Agrega la clase "show" a los elementos con la clase "appear" después de un pequeño retraso
-      elementsToAppear.forEach((element, index) => {
-        setTimeout(() => {
-          element.classList.add("show");
-        }, 300 * index); // Ajusta el valor del retraso (en milisegundos) para cambiar la secuencia de aparición
-      });
       }
 
       document.getElementById("pause-button").onclick = function() {
@@ -830,6 +820,16 @@
           document.getElementById("pause-button").style.display = "block";
       }
 
+        const elementsToAppear = document.querySelectorAll(".appear");
+
+    // Agrega un controlador de eventos al botón "Aceptar"
+    btnAceptar.addEventListener("click", function () {
+      // Agrega la clase "show" a los elementos con la clase "appear" después de un pequeño retraso
+      elementsToAppear.forEach((element, index) => {
+        setTimeout(() => {
+          element.classList.add("show");
+        }, 300 * index); // Ajusta el valor del retraso (en milisegundos) para cambiar la secuencia de aparición
+      });
 
 
   // Código JavaScript para detener la música al hacer clic en los enlaces
