@@ -782,10 +782,15 @@
           document.getElementById("popup").style.display = "none";
           audio.play();
           document.getElementById("pause-button").style.display = "block";
+
           
-          // Agregar la clase "fade-out" a las letras M&R después de hacer clic en el botón
-        var titleElement = document.getElementById("title");
-        titleElement.classList.add("fade-in");
+          var titleElement = document.getElementById("title");  
+          // Agregar la clase "fade-in" a las letras M&R para el efecto de desvanecimiento mientras aparecen
+            titleElement.classList.add("fade-in");
+            // Retardar el cambio de opacidad para que el efecto sea visible al agregar la clase
+            setTimeout(function() {
+            titleElement.style.opacity = "1";
+            }, 0);
       }
 
       document.getElementById("pause-button").onclick = function() {
