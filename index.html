@@ -542,11 +542,19 @@
   }
 }
 
-      /* clase para el efecto de aparición con desvanecimiento */
+      /* Agrega esta clase para el efecto de aparición con desvanecimiento */
         .fade-in {
             opacity: 0;
-            transition: opacity 10s ease-in;
+            animation: fadeInAnimation 1s ease-in forwards;
         }
+
+        /* Definir la animación de desvanecimiento */
+@keyframes fadeInAnimation {
+    to {
+        opacity: 1;
+    }
+}
+
 
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -563,9 +571,9 @@
     <header>
       <div id="content">
           <h1 id="title">
-            <span style="position: relative; top: 60px; margin-top: 60px;">M</span>
-            <span style="position: relative; top: 60px; margin-top: 60px;">&</span>
-            <span style="position: relative; top: 60px; margin-top: 60px;">R</span>
+            <span style="position: relative; top: 60px; margin-top: 60px; class="fade-in"">M</span>
+            <span style="position: relative; top: 60px; margin-top: 60px; class="fade-in"">&</span>
+            <span style="position: relative; top: 60px; margin-top: 60px; class="fade-in"">R</span>
           </h1>
           <h2 style="color: #fef5ee; font-size: 26px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">¡NOS CASAMOS!</h2>
           <h2 style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Fecha: 21/10/2023<</h2>
