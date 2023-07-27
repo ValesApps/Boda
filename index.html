@@ -494,38 +494,22 @@
             transition: opacity 1s ease-in-out;
           }
         
-        /* estilo para frase bonita*/
-
-
-        .frase-container {
-        text-align: center;
-        margin-top: 20px;
-        text-align: center;
-        font-family: 'Noto Serif TC', serif;
-        font-size: 18px;
-        color: #5e5e5e;
-        margin-top: 20px;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #ffffff;
-}
-        .frase-container p {
-        margin: 5px;
-    }
-
-/* Estilos para la animación de fade in */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+        /* Estilos para el contenedor de la frase */
+.frase-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.frase.hidden {
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
+/* Estilos para el elemento con la clase "frase" */
+.frase {
+    opacity: 0; /* Establecemos la opacidad inicial en 0 */
+    font-size: 18px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
 }
        
 
@@ -573,8 +557,8 @@
       <button id="play-button">▶️</button>
     </header>
     
-    <div class="frase-container">
-        <div class="frase hidden">
+    <<div class="frase-container">
+        <div class="frase" id="frase">
             <p>No creía en el destino hasta</p>
             <p>que nuestras vidas se cruzaron y</p>
             <p>el amor floreció entre nosotros.</p>
@@ -789,14 +773,51 @@
       });
     });
   });
-        // Esperar a que la página esté completamente cargada
-window.addEventListener("load", function() {
-    // Obtener el elemento con la clase "frase"
-    const fraseElement = document.querySelector(".frase");
+        // Función para verificar si el elemento está visible en la ventana del navegador
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
 
-    // Eliminar la clase "hidden" para activar el efecto "fade in"
-    fraseElement.classList.remove("hidden");
-});
+// Función que maneja el efecto de desvanecimiento cuando el elemento es visible
+function fadeInOnScroll() {
+    const fraseElement = document.getElementById("frase");
+
+    function fadeIn() {
+        let opacity = 0;
+        const targetOpacity = 1;
+        const duration = 1000; // Duración de la animación en milisegundos
+        const interval = 50; // Intervalo de tiempo para actualizar la opacidad (ms)
+        const increment = (targetOpacity / (duration / interval));
+
+        const intervalId = setInterval(function() {
+            if (opacity <= targetOpacity) {
+                fraseElement.style.opacity = opacity;
+                opacity += increment;
+            } else {
+                clearInterval(intervalId);
+            }
+        }, interval);
+    }
+
+    function handleScroll() {
+        if (isElementInViewport(fraseElement)) {
+            fadeIn();
+            window.removeEventListener("scroll", handleScroll);
+        }
+    }
+
+    // Agregar evento de desplazamiento para activar el efecto de desvanecimiento
+    window.addEventListener("scroll", handleScroll);
+}
+
+// Esperar a que la página esté completamente cargada para agregar el evento de desplazamiento
+window.addEventListener("load", fadeInOnScroll);
 
 
   // Código JavaScript para detener la música al hacer clic en los enlaces
