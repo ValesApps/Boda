@@ -496,7 +496,10 @@
         
         /* estilo para frase bonita*/
 
-        .frase {
+
+        .frase-container {
+        text-align: center;
+        margin-top: 20px;
         text-align: center;
         font-family: 'Noto Serif TC', serif;
         font-size: 18px;
@@ -505,11 +508,25 @@
         padding: 20px;
         border-radius: 10px;
         background-color: #ffffff;
-    }
-
-    .frase p {
+}
+        .frase-container p {
         margin: 5px;
     }
+
+/* Estilos para la animación de fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.frase.hidden {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
        
 
     </style>
@@ -556,12 +573,13 @@
       <button id="play-button">▶️</button>
     </header>
     
-    <div class="frase" class="appear">
-    <p>No creía en el destino hasta</p>
-    <p>que nuestras vidas se cruzaron y</p>
-    <p>el amor floreció entre nosotros.</p>
+    <div class="frase-container">
+        <div class="frase hidden">
+            <p>No creía en el destino hasta</p>
+            <p>que nuestras vidas se cruzaron y</p>
+            <p>el amor floreció entre nosotros.</p>
+        </div>
     </div>
-
     <!-- Carrusel de imágenes -->
     <div class="carousel">
       <!-- Imágenes del carrusel -->
