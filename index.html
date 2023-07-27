@@ -478,72 +478,7 @@
         background-color: #cab700;
     }
 
-        /* Estilos para el botón y opciones desplegables del candelario */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-button {
-    background-color: #ada86d;
-    border: none;
-    cursor: pointer;
-    padding: 8px 15px;
-    color: #ffffff;
-    font-size: 16px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-family: 'Noto Serif TC', serif;
-    text-decoration: none;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.option {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.option-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-}
-
-.option span {
-    font-family: 'Noto Serif TC', serif;
-}
-
-/* Mostrar el contenido al hacer hover o clic */
-.dropdown:hover .dropdown-content,
-.dropdown:focus .dropdown-content {
-    display: block;
-}
-        /* Estilos responsivos del calendario */
-/* Ajustar tamaño del botón en pantallas pequeñas */
-@media screen and (max-width: 480px) {
-  .dropdown-button {
-    padding: 6px 12px;
-    font-size: 14px;
-  }
-}
-
-/* Alinear el botón "Agregar al Calendario" al centro en pantallas pequeñas */
-@media screen and (max-width: 768px) {
-  #agregar-al-calendario-section {
-    text-align: center;
-  }
-}
-
+       
       
 
         /* hacer que aparezcan las letras del header*/
@@ -557,8 +492,30 @@
              opacity: 1;
             transition: opacity 1s ease-in-out;
           }
+        /* estilo para frase bonita/
 
+        #frase-section {
+            background-color: #ffffff;
+            color: #5e5e5e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
 
+        #frase-section h2 {
+            margin: 0;
+            font-size: 24px;
+            text-shadow: -5px 3px 3px #808080;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        #frase-section p {
+            font-size: 18px;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+       
 
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -604,7 +561,7 @@
       <button id="play-button">▶️</button>
     </header>
     
-    <div class="appear"; class="centered-paragraph">
+    <div class="appear"; id="frase-section">
         <p>No creía en el destino hasta</p>
         <p>que nuestras vidas se cruzaron y</p>
         <p>el amor floreció entre nosotros.</p>
