@@ -789,6 +789,15 @@
       });
     });
   });
+        // Esperar a que la página esté completamente cargada
+window.addEventListener("load", function() {
+    // Obtener el elemento con la clase "frase"
+    const fraseElement = document.querySelector(".frase");
+
+    // Eliminar la clase "hidden" para activar el efecto "fade in"
+    fraseElement.classList.remove("hidden");
+});
+
 
   // Código JavaScript para detener la música al hacer clic en los enlaces
   var links = document.querySelectorAll("a");
