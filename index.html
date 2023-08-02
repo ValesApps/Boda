@@ -4,21 +4,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <title>Invitación de Boda</title>
     <style>
         /* Estilos para la página #ffe9da original */
         body {
             font-family: 'Noto Serif TC', serif;
             margin: 0;
-            background-image: url('source/cover.jpg');
-            background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url('source/cover.jpg') no-repeat center center fixed;
+            background-image: url(Source/beige.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-size: cover;
-
         }
         header {
-            /*background-image: url('source/cover.jpg');
+            background-image: url('source/cover.jpg');
             background-size: cover;
-            background-position: center center;*/
+            background-position: center center;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -52,7 +58,7 @@
           width :70%; 
           padding :20px; 
           text-align:center; 
-             border-radius: 10px;
+        border-radius: 10px;
         }
         #accept-button {
             margin-top: 20px; 
@@ -96,6 +102,12 @@
           margin: 0;
         }
 
+        .contador-content{ 
+          width :70%; 
+          padding :20px;
+          text-align:center; 
+          border-radius: 10px;
+        }
 
 
 
@@ -169,33 +181,29 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 20px;
 }
 
 .image-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  /*max-width: 100%;*/
+  max-width: 100%;
   overflow: hidden;
-    border-radius: 10px; /* Agregamos bordes redondeados */
-            box-shadow: 0px 0px 8px 9px rgba(137, 108, 120, 0.81); /* Agregamos una sombra */
 }
 
 .image-container img {
-  width: 100%;
+  width: 90%;
   height: auto;
+  border-radius: 30px;
+  border: 1px solid #ffffff;
+  
 }
 
 .map-container {
-  background-color: #ffffff;
+  padding: 20px;
   border-radius: 10px;
   text-align: center;
-  
-   max-width: 500px;
-   margin: 0 auto;
+  margin-top: 20px;
 }
 
 .centered-paragraph {
@@ -211,22 +219,21 @@
 
         /*titulo ceremonia*/
         .tituloceremony-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
+              color: #000000;
+              padding: 20px;
+              border-radius: 10px;
+              text-align: center;
+              margin-top: 20px;
         }
         .tituloceremony-container h2 {
-            font-family: 'Noto Serif TC', serif;
-            font-weight: bold;
-            color: #5e5e5e;
-            font-size: 18px;
-            text-shadow: -5px 3px 3px #808080;
-            text-align: center;
-            background-color:  #ffffff;
-            border-radius: 10px; /* Agregamos bordes redondeados */
-            box-shadow: 0px 0px 8px 9px rgba(137, 108, 120, 0.81); /* Agregamos una sombra */
-            padding: 20px;
-            margin-top: 20px;
+              margin: 0;
+              font-size: 24px;
+              font-family: 'Merienda', cursive;
+        }
+
+        .img-ceremony{
+            width: 50px;
+            height: 50px;
         }
 
 
@@ -266,27 +273,17 @@
         
         /* estilos para el titulo de ebndicion*/
         .bendicion-container {
-          background-color: #ffffff;
-          color: #5e5e5e;
+          color: #000000;
           padding: 20px;
           border-radius: 10px;
           text-align: center;
           margin-top: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-    
+          font-family: 'Dancing Script', cursive;
+          font-size: 20px;
+          font-style: bold;
         }
         .bendicion-container p {
-          font-family: 'Noto Serif TC', serif;
-            font-weight: bold;
-            color: #5e5e5e;
-            font-size: 18px;
-            text-shadow: -5px 3px 3px #808080;
-            text-align: center;
-            background-color:  #ffffff;
-            border-radius: 10px; /* Agregamos bordes redondeados */
-            box-shadow: 0px 0px 8px 9px rgba(137, 108, 120, 0.81); /* Agregamos una sombra */
-    
+          margin: 0;
         }
         .bendicion-container i {
               margin-right: 5px;
@@ -295,18 +292,10 @@
 
         /* estilos para los nombres*/
         .blessing-container {
-        background-color: #808080;
-        color: #ffffff;
         padding: 20px;
         border-radius: 10px;
         text-align: center;
         margin-top: 20px;
-        /* Añade la siguiente propiedad para hacerlo más alto */
-        min-height: 180px;
-        /* Añade esta propiedad para centrar verticalmente el contenido */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
 
     .blessing-container h3 {
@@ -319,14 +308,14 @@
     }
         
     .blessing-container i {
-        margin-left: 5px; /* Ajusta el espaciado entre el título y el icono según tus preferencias */
+        margin-left: 1px; /* Ajusta el espaciado entre el título y el icono según tus preferencias */
         font-size: 20px; /* Ajusta el tamaño del icono según tus preferencias */
     }
 
         /* Estilos para la sección SALÓN */
         #salon-section {
-            background-color: #ffffff;
-              color: #5e5e5e;
+
+              color: #000000;
               padding: 20px;
               border-radius: 10px;
               text-align: center;
@@ -336,8 +325,7 @@
         #salon-section h2 {
             margin: 0;
               font-size: 24px;
-              text-shadow: -5px 3px 3px #808080;
-              font-family: 'Noto Serif TC', serif;
+              font-family: 'Merienda', cursive;
         }
 
     /* Estilos para la sección del mapa del salon*/
@@ -349,7 +337,6 @@
         }
 
         .map-container {
-            background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
@@ -361,10 +348,15 @@
             border: none;
         }
 
+        .img-novia-icon{
+            width: 50px;
+            height: 50px;
+
+        }
+
          /* Estilos para la sección DRESS CODE */
         #dress-code-section {
-            background-color: #ffffff;
-            color: #5e5e5e;
+            color: #000000;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
@@ -374,8 +366,7 @@
         #dress-code-section h3 {
             margin: 0;
             font-size: 24px;
-            text-shadow: -5px 3px 3px #808080;
-            font-family: 'Noto Serif TC', serif;
+            font-family: 'Merienda', cursive;
         }
         
         #dress-code-section p {
@@ -387,8 +378,8 @@
     
         /* Estilos para el icono del Dress Code */
         .dress-code-icon {
-            width: 24px;
-            height: 24px;
+            width: 150px;
+            height: 150px;
         }
         .dress-code-icon2 {
             width: 44px;
@@ -399,8 +390,7 @@
         /* estilo para el aviso de ñiños*/
 
         #sin-ninos-section {
-            background-color: #ffffff;
-            color: #5e5e5e;
+            color: #000000;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
@@ -410,8 +400,7 @@
         #sin-ninos-section h2 {
             margin: 0;
             font-size: 24px;
-            text-shadow: -5px 3px 3px #808080;
-            font-family: 'Noto Serif TC', serif;
+            font-family:'Merienda', cursive;
         }
 
         #sin-ninos-section p {
@@ -420,14 +409,13 @@
         }
 
         .child-icon {
-            font-size: 36px;
-            margin-top: 10px;
+            width: 150px;
+            height: 150px;
         }
 
         /* Estilos para la nueva sección MESA DE REGALOS */
         #mesa-de-regalos-section {
-            background-color: #ffffff;
-            color: #5e5e5e;
+            color: #000000; 
             padding: 20px;
             border-radius: 10px;
             text-align: center;
@@ -440,8 +428,8 @@
         #mesa-de-regalos-section h2 {
             margin: 0;
             font-size: 24px;
-            text-shadow: -5px 3px 3px #808080;
-            font-family: 'Noto Serif TC', serif;
+            font-family: 'Merienda', cursive;
+            
         }
 
         #mesa-de-regalos-section p {
@@ -467,12 +455,37 @@
             background-color: #cab700;
         }
 
+        .img-regalo{
+            width: 50px;
+            height: 50px;
+        }
+
+        .img-mesa{
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            border: 1px solid;
+        }
+
+        .img-separador{
+            width: 300px;
+            height: 200px;
+            
+        }
+
+        #separador-section {
+            height: 200px;
+            color: #000000;
+            border-radius: 10px;
+            text-align: center;
+            
+        }
+
         /* Estilos para la sección de confirmación de asistencia */
     .confirmation-form-container {
         text-align: center;
         margin-top: 20px;
-        background-color: #ffffff;
-        color: #5e5e5e;
+        color: #000000;
         padding: 20px;
         border-radius: 10px;
     }
@@ -481,8 +494,7 @@
         margin: 0;
         font-size: 24px;
         font-weight: bold;
-        text-shadow: -5px 3px 3px #808080;
-        font-family: 'Noto Serif TC', serif;
+        font-family: 'Merienda' , cursive;
     }
 
     .confirmation-form-container a {
@@ -504,6 +516,16 @@
 
     .confirmation-form-container button:hover {
         background-color: #cab700;
+    }
+
+    .img-calendar{
+        width: 50px;
+        height: 50px;
+    }
+
+    .img-cheque{
+        width: 50px;
+        height: 50px;
     }
 
        
@@ -529,16 +551,18 @@
 }
 
 /* Estilos para el elemento con la clase "frase" que esta despues delheader */
+.img-frase-top{
+            width: 50px;
+            height: 50px;
+        }
+
+
 .frase {
     opacity: 0; /* Establecemos la opacidad inicial en 0 */
     font-family: 'Noto Serif TC', serif;
-    font-weight: bold;
     color: #5e5e5e;
     font-size: 18px;
     text-align: center;
-    background-color:  #ffffff;
-    border-radius: 10px; /* Agregamos bordes redondeados */
-    box-shadow: -5px 4px 8px rgba(0, 0, 0, 0.1); /* Agregamos una sombra */
     padding: 20px;
     margin-top: 20px;
     transition: opacity 1s ease-in-out; /* Agregamos una transición de opacidad */
@@ -565,23 +589,7 @@
             <span style="position: relative; top: 60px; margin-top: 60px;">&</span>
             <span style="position: relative; top: 60px; margin-top: 60px;">R</span>
           </h1>
-          <h2 class="appear" style="color: #fef5ee; font-size: 26px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">¡NOS CASAMOS!</h2>
-          <h2 class="appear" style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Fecha: 21/10/2023</h2>
-          <h2 class="appear" style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Ya Falta Poco:</h2>
-      <table  width="90%" class="appear">
-            <tr>
-            <td style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="days"></span></td>
-            <td style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="hours"></span></td>
-            <td style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="minutes"></span></td>
-            <td style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="seconds"></span></td>
-        </tr>
-        <tr id="countdown-labels" class="appear">
-            <th style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Días</th>
-            <th style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Horas</th>
-            <th style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Minutos</th>
-            <th style="color: #fef5ee; font-size: 18px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Segundos</th>
-        </tr>
-        </table>
+          <h2 class="appear" style="color: #fef5ee; font-size: 26px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">¡NOS CASAMOS!</h2> 
     
 
       </div>
@@ -589,12 +597,32 @@
       <button id="pause-button">⏸️</button>
       <button id="play-button">▶️</button>
     </header>
+
+    <div class="contador-content">
+          <h2 class="appear" style="color: #000000; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">SAVE THE DATE</h2>
+          <h3 class="appear" style="color: #000000; font-size: 40px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">21 - 10 - 2023</h3>
+         
+      <table  width="90%" class="appear">
+            <tr>
+            <td style="color: #000000; font-size: 22px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="days"></span></td>
+            <td style="color: #000000; font-size: 22px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="hours"></span></td>
+            <td style="color: #000000; font-size: 22px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="minutes"></span></td>
+            <td style="color: #000000; font-size: 22px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="seconds"></span></td>
+        </tr>
+        <tr id="countdown-labels" class="appear">
+            <th style="color: #000000; font-size: 22px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Días|</th>
+            <th style="color: #000000; font-size: 22px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Horas|</th>
+            <th style="color: #000000; font-size: 22px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Minutos|</th>
+            <th style="color: #000000; font-size: 22px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Segundos</th>
+        </tr>
+        </table>
+    </div>
     
     <div class="frase-container">
         <div class="frase" id="frase">
-            <p>No creía en el destino hasta</p>
-            <p>que nuestras vidas se cruzaron y</p>
-            <p>el amor floreció entre nosotros.</p>
+            <img src="/Source/corazon.png" class="img-frase-top" alt="corazon">
+            <p>NO CREÍA EN EL DESTINO HASTA QUE NUESTRAS VIDAS SE CRUZARON Y EL AMOR FLORECIÓ ENTRE NOSOTROS</p>
+            
         </div>
     </div>
     <!-- Carrusel de imágenes -->
@@ -639,7 +667,8 @@
 
       <!--titulo ceremonia-->
       <div class="tituloceremony-container">
-           <h2>Ceremonia Religiosa</h2>
+            <img class="img-ceremony" src="/Source/iglesia.png" alt="Iglesia">
+           <h2>CEREMONIA RELIGIOSA</h2>
      </div>
     
     <!--info ceremonia-->
@@ -664,47 +693,56 @@
   </div>
 </div>
 
+ <!--Separador de divs-->
+ <div id="separador-section">
+    <img class="img-separador" src="Source/separador.png" alt="separador">
+</div>
+
     <main>
         
       <!-- Contenido principal de la página -->
        <!-- Bendicion -->
         <div class="bendicion-container">
-              <p><i class="fas fa-praying-hands"></i> CON LA BENDICION DE NUESTROS PADRES:</p>
+              <p>CON LA BENDICION DE NUESTROS PADRES</p>
         </div>
 
         <div class="blessing-container">
-    <h3>PAPÁS DE LA NOVIA:</h3>
-    <p>Felipe Carbajal Marcial<br>Martha Mercado Ruvalcaba</p>
+            <img class="img-novia-icon" src="/Source/novia.png" alt="Novia">
+    <h3>PAPÁS DE LA NOVIA</h3>
+    <p>Felipe Carbajal Marcial<br>Martha Mercado Ruvalcaba</p><br>
 
-    <h3>PAPÁS DEL NOVIO:</h3>
+    <img class="img-novia-icon" src="/Source/novio.png" alt="">
+    <h3>PAPÁS DEL NOVIO</h3>
     <p>Ricardo Ortiz Hernández<br>Alejandra Alvarado Ramos <i class="fas fa-cross"></i></p>
 </div>
 
 
         <!-- Padrinos -->
 <div class="bendicion-container">
-    <p><i class="fas fa-praying-hands"></i> PADRINOS DE VELACIÓN</p>
+    <p>PADRINOS DE VELACIÓN</p>
 </div>
 
 <!-- Segundo contenedor para el icono de corazón -->
 <div class="blessing-container">
-    
-    <h3><i class="fas fa-heart"></i></h3>
-    <p>
-        Adriana Carvajal Robles<br>
+    <p>Adriana Carvajal Robles<br>
         Reymundo Jesús Celedón Hirales<br><br>
     </p>
 </div>
 
 
     </main>
+ <!--Separador de divs-->
+ <div id="separador-section">
+    <img class="img-separador" src="Source/separador.png" alt="separador">
+</div>
+
     <!-- Salon -->
     <div id="salon-section">
-        <h2 style="text-align: center;">SALÓN: <i class="fas fa-store"></i></h2>
+        <h2 style="text-align: center;">SALÓN</h2>
     </div>
     
     <div class="image-container">
-         <img src="source/salon.png" alt="Salón">
+         <img src="source/Salonint.png" alt="Salón">
     </div>
     
     <div class="container">
@@ -724,41 +762,53 @@
 
     <!-- Sección DRESS CODE -->
 <div id="dress-code-section">
-    <h3>DRESS CODE:</h3>
+    <h3>DRESS CODE</h3>
     <h3>FORMAL</h3><br>
-    <p class="centered-paragraph"> <img class="dress-code-icon2" src="source/vestido.png" alt="Dress Code Icon"><br>
-        *Mujeres: Favor de omitir el color Blanco y Morado (Bugambilia)
+    <p class="centered-paragraph"> <img class="dress-code-icon" src="source/formal.png" alt="Dress Code Icon"><br>
+        *Mujeres: Favor de omitir el color blanco y morado (bugambilia)
     </p>
 </div>
 
 
     <!-- Nueva sección SIN NIÑOS -->
-<div id="sin-ninos-section" class="centered-paragraph"> 
-        <h2>¡NO NIÑOS!</h2><br><br>
-        <p>Amamos a los niños, pero creemos que necesitan una noche libre.</p>
-        <p>¡Solo adultos, por favor!</p>
-        <div class="child-icon">
-            <i class="fas fa-child"></i>
-            <i class="fas fa-child"></i>
+<div id="sin-ninos-section"> 
+        <h2>¡NO NIÑOS!</h2>
+        <p class="centered-paragraph"> <img class="child-icon" src="/Source/ninos.png" alt=""><br>
+             Amamos a los niños, pero creemos que necesitan una noche libre.<br>
+             ¡Solo adultos, por favor!</p>
+        
         </div>
+    </div>
+    
+     <!--Separador de divs-->
+     <div id="separador-section">
+        <img class="img-separador" src="Source/separador.png" alt="separador">
     </div>
 
     <!-- Nueva sección MESA DE REGALOS -->
     <div id="mesa-de-regalos-section">
-        <h2>OBSEQUIOS <i class="fas fa-gift"></i></h2>
-        <p>Nuestro Mejor Regalo es que estés con nosotros en nuestro día, pero si quieres hacernos un obsequio te compartimos la siguiente opcion:</p>
+        <h2>MESA DE REGALOS</h2>
+        <p>Nuestro mejor regalo es que estés con nosotros en nuestro día, pero si quieres hacernos un obsequio te compartimos la siguiente opcion:</p>
+        <img class="img-regalo"  src="/Source/regalo.png" alt="regalo"><br>
+        <img class="img-mesa" src="/Source/liverpool.jpg" alt="liverpool"><br>
+
         <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51205311" target="_blank" id="mesa-de-regalos-button">Ir a Mesa de Regalos</a>
     </div>
+
+   
+
     <!-- enlace al formulario -->
 <div class="confirmation-form-container">
-    <p>¡Confirma tu asistencia!</p>
+    <img class="img-cheque" src="/Source/cheque.png" alt="cheque"><br>
+    <p>¡Confirma tu asistencia!</p> <br>
     <a href="https://forms.gle/UFDTfqem1hEhVhZv6" target="_blank">
         <button>Confirmar Asistencia</button>
     </a>
 </div>
  <!-- Nueva sección AGREGAR AL CALENDARIO -->
 <div id="agregar-al-calendario-section" class="confirmation-form-container">
-    <p>Agrega nuestra boda a tu calendario:</p>
+    <img class="img-calendar" src="/Source/calendario.png" alt="Calendario">
+    <p>Agrega nuestra boda a tu calendario:</p><br>
     <button id="agregar-al-calendario-button">Agregar al Calendario</button>
 </div>
     
@@ -948,7 +998,7 @@ window.addEventListener("load", fadeInOnScroll);
     const endDate = new Date('2023-10-21T23:00:00');
 
     // Crear la URL para agregar el evento al calendario (Google Calendar y otros)
-    const googleCalendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=Nuestra+Boda&dates=${startDate.toISOString().replace(/-|:|\.\d+/g, "")}/${endDate.toISOString().replace(/-|:|\.\d+/g, "")}&details=¡No+te+pierdas+nuestra+boda!&location=Parroquia+de+Nuestra+Señora+de+Guadalupe,+AV.+Tepeyac+550,+Col:+Chapalita,+Guadalajara,+Jalisco`;
+    const googleCalendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=Boda+Martha+y+Ricardo&dates=${startDate.toISOString().replace(/-|:|\.\d+/g, "")}/${endDate.toISOString().replace(/-|:|\.\d+/g, "")}&details=¡No+te+pierdas+nuestra+boda!&location=Parroquia+de+Nuestra+Señora+de+Guadalupe,+AV.+Tepeyac+550,+Col:+Chapalita,+Guadalajara,+Jalisco`;
 
     // Enlace para dispositivos iOS (iPhone, iPad)
     const iOsCalendarLink = `webcal://www.google.com/calendar/event?text=Nuestra+Boda&dates=${startDate.toISOString().replace(/-|:|\.\d+/g, "")}/${endDate.toISOString().replace(/-|:|\.\d+/g, "")}&details=¡No+te+pierdas+nuestra+boda!&location=Parroquia+de+Nuestra+Señora+de+Guadalupe,+AV.+Tepeyac+550,+Col:+Chapalita,+Guadalajara,+Jalisco`;
