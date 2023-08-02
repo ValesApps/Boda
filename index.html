@@ -568,20 +568,19 @@
     transition: opacity 1s ease-in-out; /* Agregamos una transición de opacidad */
 
     .dress-code-paragraph {
-    display: inline-block;
+    display: inline;
     position: relative;
-    margin-right: 10px; /* Ajusta el espaciado entre el texto y los círculos */
 }
 
-.dress-code-paragraph::after {
-    content: "";
+.color-circle {
     display: inline-block;
     width: 0.8em; /* Ajusta el tamaño de los círculos según tu preferencia */
     height: 0.8em; /* Igual que el ancho para mantener la forma circular */
-    margin-left: 5px; /* Ajusta el espaciado entre el texto y los círculos */
+    margin: 0 2px; /* Ajusta el espaciado entre los círculos */
     border-radius: 50%;
     background-color: #FF5733; /* Cambia esto al color deseado */
 }
+
 
 
     
@@ -784,15 +783,15 @@
     <h3>FORMAL</h3><br>
     <p class="centered-paragraph dress-code-paragraph">
         <img class="dress-code-icon" src="source/formal.png" alt="Dress Code Icon"><br>
-        Mujeres, favor de omitir:
+        Mujeres, favor de omitir:&nbsp;
+        <span class="color-circle"></span>
+        <span class="color-circle"></span>
+        <span class="color-circle"></span>
+        <span class="color-circle"></span>
+        <span class="color-circle"></span>
     </p>
-    <ul class="color-circles">
-        <li class="color-circle" style="background-color: #FF5733;"></li>
-        <li class="color-circle" style="background-color: #33FFA8;"></li>
-        <li class="color-circle" style="background-color: #334DFF;"></li>
-        <li class="color-circle" style="background-color: #FF33E9;"></li>
-    </ul>
 </div>
+
 
 
     <!-- Nueva sección SIN NIÑOS -->
