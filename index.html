@@ -567,6 +567,8 @@
     margin-top: 20px;
     transition: opacity 1s ease-in-out; /* Agregamos una transición de opacidad */
     }
+
+        /* circulitos de colores no permitidos*/
     
     .dress-code-paragraph {
     display: inline;
@@ -575,11 +577,10 @@
 
 .color-circle {
     display: inline-block;
-    width: 0.8em; /* Ajusta el tamaño de los círculos según tu preferencia */
+    width: 0.8em; /* Ajusta el tamaño de los círculos */
     height: 0.8em; /* Igual que el ancho para mantener la forma circular */
     margin: 0 2px; /* Ajusta el espaciado entre los círculos */
     border-radius: 50%;
-    background-color: #FF5733; /* Cambia esto al color deseado */
 }
 
 
@@ -780,11 +781,10 @@
     <p class="centered-paragraph dress-code-paragraph">
         <img class="dress-code-icon" src="source/formal.png" alt="Dress Code Icon"><br>
         Mujeres, favor de omitir:&nbsp;
-        <span class="color-circle"></span>
-        <span class="color-circle"></span>
-        <span class="color-circle"></span>
-        <span class="color-circle"></span>
-        <span class="color-circle"></span>
+        <span class="color-circle" style="background-color: #ffffff;"></span>
+        <span class="color-circle" style="background-color: #eae6ca;"></span>
+        <span class="color-circle" style="background-color: #800080;"></span>
+        <span class="color-circle" style="background-color: #e60094;"></span>
     </p>
 </div>
 
