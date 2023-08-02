@@ -568,17 +568,20 @@
     transition: opacity 1s ease-in-out; /* Agregamos una transición de opacidad */
 
     .color-circles {
-        display: inline-block;
-        margin-left: 10px;
-    }
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-    .color-circle {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        margin-right: 5px;
-    }
+.color-circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
     
 }
        
@@ -778,13 +781,13 @@
     <h3>DRESS CODE</h3>
     <h3>FORMAL</h3><br>
     <p class="centered-paragraph"> <img class="dress-code-icon" src="source/formal.png" alt="Dress Code Icon"><br>
-        *Mujeres: Favor de omitir:
-        <span class="color-circles">
-            <span class="color-circle" style="background-color: #FF5733;"></span>
-            <span class="color-circle" style="background-color: #33FFA8;"></span>
-            <span class="color-circle" style="background-color: #334DFF;"></span>
-            <span class="color-circle" style="background-color: #FF33E9;"></span>
-        </span>
+         Mujeres, favor de omitir:
+    <ul class="color-circles">
+        <li class="color-circle" style="background-color: #FF5733;"></li>
+        <li class="color-circle" style="background-color: #33FFA8;"></li>
+        <li class="color-circle" style="background-color: #334DFF;"></li>
+        <li class="color-circle" style="background-color: #FF33E9;"></li>
+    </ul>
     </p>
     
 </div>
