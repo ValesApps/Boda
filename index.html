@@ -591,33 +591,23 @@
         
 
         /* Estilos para la nueva sección */
-.final-section {
-    background-color: #ffe9da;
-    text-align: center;
-    padding: 40px 0;
+/* Estilo para elementos revelados */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
-.final-section-content {
-    opacity: 0;
+/* Estilos adicionales para la sección final y el texto a revelar */
+.final-section {
+    background-color: #ffe9da;
+    padding: 40px 0;
+    text-align: center;
 }
 
 .reveal-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: #5e5e5e;
-    margin: 10px 0;
-    animation: reveal 1.5s ease-in-out 0.5s forwards;
-}
-
-@keyframes reveal {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 
@@ -873,12 +863,14 @@
     <button id="agregar-al-calendario-button">Agregar al Calendario</button>
 </div>
 
-    <section class="final-section">
-        <div class="final-section-content">
-            <p class="reveal-text">MARTHA & RICARDO</p>
-            <p class="reveal-text">GRACIAS POR SER PARTE DEL MEJOR DÍA DE NUESTRAS VIDAS</p>
-        </div>
-    </section>
+    <!-- Sección final con texto a revelar -->
+<div class="final-section">
+    <div class="reveal-text">
+        <h2>MARTHA & RICARDO</h2>
+        <p>GRACIAS POR SER PARTE DEL MEJOR DÍA DE NUESTRAS VIDAS</p>
+    </div>
+</div>
+
     
         <!-- Información de la boda -->
 
