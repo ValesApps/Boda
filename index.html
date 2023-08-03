@@ -1089,6 +1089,35 @@ window.addEventListener("load", fadeInOnScroll);
     }
   };
 
+        //animacvion final
+        // Detectar cuando la sección final está en la vista
+const finalSection = document.querySelector(".final-section");
+const revealText = document.querySelectorAll(".reveal-text");
+
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function handleScroll() {
+    for (let i = 0; i < revealText.length; i++) {
+        if (isElementInViewport(finalSection)) {
+            revealText[i].classList.add("visible");
+        }
+    }
+}
+
+// Agregar evento de desplazamiento
+window.addEventListener("scroll", handleScroll);
+
+// Ejecutar la función una vez al cargar la página para manejar el estado inicial
+handleScroll();
+
 
 
 
