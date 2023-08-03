@@ -584,6 +584,38 @@
     margin: 0 2px; /* Ajusta el espaciado entre los círculos */
     border-radius: 50%;
 }
+        
+
+        /* Estilos para la nueva sección */
+.final-section {
+    background-color: #ffe9da;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.final-section-content {
+    opacity: 0;
+}
+
+.reveal-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5e5e5e;
+    margin: 10px 0;
+    animation: reveal 1.5s ease-in-out 0.5s forwards;
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 
     </style>
@@ -836,6 +868,13 @@
     <p>Agrega nuestra boda a tu calendario:</p><br>
     <button id="agregar-al-calendario-button">Agregar al Calendario</button>
 </div>
+
+    <section class="final-section">
+        <div class="final-section-content">
+            <p class="reveal-text">MARTHA & RICARDO</p>
+            <p class="reveal-text">GRACIAS POR SER PARTE DEL MEJOR DÍA DE NUESTRAS VIDAS</p>
+        </div>
+    </section>
     
         <!-- Información de la boda -->
 
