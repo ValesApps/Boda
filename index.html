@@ -599,7 +599,7 @@
     padding: 40px 0;
     text-align: center;
 }
-        .reveal-text {
+    .reveal-text {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1s ease, transform 1s ease;
@@ -622,7 +622,7 @@
     </div>
     <header class="appear">
       <div id="content">
-          <h1 id="title" class="appear">
+          <h1 id="title" class="reveal-textr">
             <span style="position: relative; top: 60px; margin-top: 60px;">M</span>
             <span style="position: relative; top: 60px; margin-top: 60px;">&</span>
             <span style="position: relative; top: 60px; margin-top: 60px;">R</span>
@@ -909,51 +909,15 @@
       });
     });
   });
-        // Función para verificar si el elemento está visible en la ventana del navegador
-function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-// Función que maneja el efecto de desvanecimiento cuando el elemento es visible
-function fadeInOnScroll() {
-    const fraseElement = document.getElementById("frase");
-
-    function fadeIn() {
-        let opacity = 0;
-        const targetOpacity = 1;
-        const duration = 1000; // Duración de la animación en milisegundos
-        const interval = 50; // Intervalo de tiempo para actualizar la opacidad (ms)
-        const increment = (targetOpacity / (duration / interval));
-
-        const intervalId = setInterval(function() {
-            if (opacity <= targetOpacity) {
-                fraseElement.style.opacity = opacity;
-                opacity += increment;
-            } else {
-                clearInterval(intervalId);
-            }
-        }, interval);
-    }
-
-    function handleScroll() {
-        if (isElementInViewport(fraseElement)) {
-            fadeIn();
-            window.removeEventListener("scroll", handleScroll);
-        }
-    }
-
-    // Agregar evento de desplazamiento para activar el efecto de desvanecimiento
-    window.addEventListener("scroll", handleScroll);
-}
-
-// Esperar a que la página esté completamente cargada para agregar el evento de desplazamiento
-window.addEventListener("load", fadeInOnScroll);
+    // Inicializar ScrollReveal al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+        ScrollReveal().reveal(".reveal-text", {
+            delay: 200,
+            distance: "50px",
+            origin: "bottom",
+            easing: "ease-in-out",
+        });
+    });
 
 
   // Código JavaScript para detener la música al hacer clic en los enlaces
@@ -1079,18 +1043,6 @@ window.addEventListener("load", fadeInOnScroll);
   };
 
         //animacvion final
-// Inicializar ScrollReveal al cargar la página
-    document.addEventListener("DOMContentLoaded", function() {
-        ScrollReveal().reveal(".reveal-text", {
-            delay: 200,
-            distance: "50px",
-            origin: "bottom",
-            easing: "ease-in-out",
-        });
-    });
-
-
-
 
 
         
