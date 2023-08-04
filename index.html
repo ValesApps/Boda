@@ -10,8 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
-
     <title>Invitación de Boda</title>
     <style>
         /* Estilos para la página #ffe9da original */
@@ -597,7 +595,7 @@
 
 /* Estilos adicionales para la sección final y el texto a revelar */
 .final-section {
-    background-color: #ffe9da;
+    /*background-color: #ffe9da;*/
     padding: 40px 0;
     text-align: center;
 }
@@ -741,8 +739,6 @@
     <img class="img-separador" src="Source/separador.png" alt="separador">
 </div>
 
-    <main>
-        
       <!-- Contenido principal de la página -->
        <!-- Bendicion -->
         <div class="bendicion-container">
@@ -772,8 +768,6 @@
     </p>
 </div>
 
-
-    </main>
  <!--Separador de divs-->
  <div id="separador-section">
     <img class="img-separador" src="Source/separador.png" alt="separador">
@@ -872,7 +866,7 @@
 
     
         <!-- Información de la boda -->
-
+<script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
     <script>
       // Código JavaScript para mostrar el mensaje emergente y reproducir la música
       window.onload = function() {
@@ -1085,15 +1079,15 @@ window.addEventListener("load", fadeInOnScroll);
   };
 
         //animacvion final
-document.addEventListener("DOMContentLoaded", function() {
-    // Inicializar ScrollReveal
-    ScrollReveal().reveal(".reveal-text", {
-        delay: 200,
-        distance: "50px",
-        origin: "bottom",
-        easing: "ease-in-out",
+// Inicializar ScrollReveal al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+        ScrollReveal().reveal(".reveal-text", {
+            delay: 200,
+            distance: "50px",
+            origin: "bottom",
+            easing: "ease-in-out",
+        });
     });
-});
 
 
 
