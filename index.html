@@ -103,16 +103,12 @@
         }
 
         .contador-content{
-            background: linear-gradient(rgba(245, 245, 220, 0.75), rgba(245, 245, 220, 0.75)), url(/Source/image12.jpg) no-repeat center center fixed;
-            background-size: cover;
-            background-position: center center;
             height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #ffffff;
         }
 
 
@@ -547,7 +543,6 @@
          .appear.show {
              opacity: 1;
             transition: opacity 1s ease-in-out;
-             transform: translateY(20px)
           }
         
         /* Estilos para el contenedor de la frase */
@@ -592,19 +587,27 @@
         
 
         /* Estilos para la nueva sección */
-
-/* Estilos adicionales para la sección final y el texto a revelar */
 .final-section {
-    /*background-color: #ffe9da;*/
-    padding: 40px 0;
+    background-color: #ffe9da;
     text-align: center;
+    padding: 40px 0;
 }
-    .reveal-text {
+
+.final-section-content {
+    opacity: 0;
+}
+
+.reveal-text {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+/* Estilo cuando se revele el texto */
+.reveal-text.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 
@@ -620,9 +623,9 @@
           <button id="accept-button">Aceptar</button>
       </div>
     </div>
-    <header class="reveal-text">
+    <header class="appear">
       <div id="content">
-          <h1 id="title" class="reveal-text">
+          <h1 id="title" class="appear">
             <span style="position: relative; top: 60px; margin-top: 60px;">M</span>
             <span style="position: relative; top: 60px; margin-top: 60px;">&</span>
             <span style="position: relative; top: 60px; margin-top: 60px;">R</span>
@@ -637,22 +640,22 @@
     </header>
 
     <div class="contador-content">
-    <h3 class="appear" style="color:#ffffff; font-size: 40px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">21 - 10 - 2023</h3>
-    <p class="appear" style="color: #ffffff; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">LLEGÓ EL DÍA DE DECIRNOS SÍ PARA TODA LA VIDA...</p>
-    <p class="appear" style="color: #ffffff; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">FALTA POCO:</p>
+    <h3 class="appear" style="color: #000000; font-size: 40px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">21 - 10 - 2023</h3>
+    <p class="appear" style="color: #5e5e5e; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">LLEGÓ EL DÍA DE DECIRNOS SÍ PARA TODA LA VIDA...</p>
+    <p class="appear" style="color: #5e5e5e; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">FALTA POCO:</p>
 
     <table width="90%" class="appear">
         <tr>
-            <td style="color: #ffffff; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="days"></span></td>
-            <td style="color: #ffffff; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="hours"></span></td>
-            <td style="color: #ffffff; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="minutes"></span></td>
-            <td style="color: #ffffff; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="seconds"></span></td>
+            <td style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="days"></span></td>
+            <td style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="hours"></span></td>
+            <td style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="minutes"></span></td>
+            <td style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="seconds"></span></td>
         </tr>
         <tr id="countdown-labels" class="appear">
-            <th style="color: #ffffff; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Días|</th>
-            <th style="color:#ffffff; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Horas|</th>
-            <th style="color: #ffffff; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Minutos|</th>
-            <th style="color: #ffffff; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Segundos</th>
+            <th style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Días|</th>
+            <th style="color:#5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Horas|</th>
+            <th style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Minutos|</th>
+            <th style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Segundos</th>
         </tr>
     </table>
 </div>
@@ -739,6 +742,8 @@
     <img class="img-separador" src="Source/separador.png" alt="separador">
 </div>
 
+    <main>
+        
       <!-- Contenido principal de la página -->
        <!-- Bendicion -->
         <div class="bendicion-container">
@@ -768,6 +773,8 @@
     </p>
 </div>
 
+
+    </main>
  <!--Separador de divs-->
  <div id="separador-section">
     <img class="img-separador" src="Source/separador.png" alt="separador">
@@ -855,18 +862,15 @@
     <button id="agregar-al-calendario-button">Agregar al Calendario</button>
 </div>
 
-    <!-- Sección final con texto a revelar -->
-<div class="final-section">
+    <div class="final-section">
     <div class="reveal-text">
-        <h2>MARTHA & RICARDO</h2>
-        <p>GRACIAS POR SER PARTE DEL MEJOR DÍA DE NUESTRAS VIDAS</p>
+        <h2 class="reveal">MARTHA & RICARDO</h2>
+        <p class="reveal">GRACIAS POR SER PARTE DEL MEJOR DÍA DE NUESTRAS VIDAS</p>
     </div>
 </div>
-
-
     
         <!-- Información de la boda -->
-<script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
+
     <script>
       // Código JavaScript para mostrar el mensaje emergente y reproducir la música
       window.onload = function() {
@@ -909,15 +913,51 @@
       });
     });
   });
-    // Inicializar ScrollReveal al cargar la página
-    document.addEventListener("DOMContentLoaded", function() {
-        ScrollReveal().reveal(".reveal-text", {
-            delay: 200,
-            distance: "50px",
-            origin: "bottom",
-            easing: "ease-in-out",
-        });
-    });
+        // Función para verificar si el elemento está visible en la ventana del navegador
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Función que maneja el efecto de desvanecimiento cuando el elemento es visible
+function fadeInOnScroll() {
+    const fraseElement = document.getElementById("frase");
+
+    function fadeIn() {
+        let opacity = 0;
+        const targetOpacity = 1;
+        const duration = 1000; // Duración de la animación en milisegundos
+        const interval = 50; // Intervalo de tiempo para actualizar la opacidad (ms)
+        const increment = (targetOpacity / (duration / interval));
+
+        const intervalId = setInterval(function() {
+            if (opacity <= targetOpacity) {
+                fraseElement.style.opacity = opacity;
+                opacity += increment;
+            } else {
+                clearInterval(intervalId);
+            }
+        }, interval);
+    }
+
+    function handleScroll() {
+        if (isElementInViewport(fraseElement)) {
+            fadeIn();
+            window.removeEventListener("scroll", handleScroll);
+        }
+    }
+
+    // Agregar evento de desplazamiento para activar el efecto de desvanecimiento
+    window.addEventListener("scroll", handleScroll);
+}
+
+// Esperar a que la página esté completamente cargada para agregar el evento de desplazamiento
+window.addEventListener("load", fadeInOnScroll);
 
 
   // Código JavaScript para detener la música al hacer clic en los enlaces
@@ -1041,8 +1081,16 @@
       window.open(googleCalendarLink, "_blank");
     }
   };
+ // Inicializar ScrollReveal al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+        ScrollReveal().reveal(".reveal-text", {
+            delay: 200,
+            distance: "50px",
+            origin: "bottom",
+            easing: "ease-in-out",
+        });
+    });
 
-        //animacvion final
 
 
         
