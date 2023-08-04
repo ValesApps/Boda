@@ -592,26 +592,24 @@
         
 
         /* Estilos para la nueva sección */
-.final-section {
-    text-align: center;
-    padding: 40px 0;
-}
-
-.final-section-content {
-    opacity: 0;
-}
-
 .reveal-text {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
+    text-align: center;
+    padding: 50px 0;
+    background-color: #ffffff; /* Puedes ajustar el color de fondo según tus preferencias */
+  }
 
-/* Estilo cuando se revele el texto */
-.reveal-text.reveal {
-    opacity: 1;
-    transform: translateY(0);
-}
+  .reveal-text h2 {
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #5e5e5e;
+  }
+
+  .reveal-text p {
+    font-size: 20px;
+    margin: 0;
+    color: #5e5e5e;
+  }
 
 
 
@@ -644,22 +642,22 @@
     </header>
 
     <div class="contador-content">
-    <h3 class="appear" style="color: #000000; font-size: 40px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">21 - 10 - 2023</h3>
-    <p class="appear" style="color: #5e5e5e; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">LLEGÓ EL DÍA DE DECIRNOS SÍ PARA TODA LA VIDA...</p>
-    <p class="appear" style="color: #5e5e5e; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">FALTA POCO:</p>
+    <h3 class="appear" style="color: #fef5ee; font-size: 40px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">21 - 10 - 2023</h3>
+    <p class="appear" style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">LLEGÓ EL DÍA DE DECIRNOS SÍ PARA TODA LA VIDA...</p>
+    <p class="appear" style="color: #fef5ee; font-size: 24px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">FALTA POCO:</p>
 
     <table width="90%" class="appear">
         <tr>
-            <td style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="days"></span></td>
-            <td style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="hours"></span></td>
-            <td style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="minutes"></span></td>
-            <td style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="seconds"></span></td>
+            <td style="color: #fef5ee; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="days"></span></td>
+            <td style="color: #fef5ee; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="hours"></span></td>
+            <td style="color: #fef5ee; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif; margin-right: 5px;"><span id="minutes"></span></td>
+            <td style="color: #fef5ee; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif"><span id="seconds"></span></td>
         </tr>
         <tr id="countdown-labels" class="appear">
-            <th style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Días|</th>
-            <th style="color:#5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Horas|</th>
-            <th style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Minutos|</th>
-            <th style="color: #5e5e5e; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Segundos</th>
+            <th style="color: #fef5ee; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Días|</th>
+            <th style="color:#fef5ee; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Horas|</th>
+            <th style="color: #fef5ee; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Minutos|</th>
+            <th style="color: #fef5ee; font-size: 22px; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">Segundos</th>
         </tr>
     </table>
 </div>
@@ -866,11 +864,9 @@
     <button id="agregar-al-calendario-button">Agregar al Calendario</button>
 </div>
 
-    <div class="final-section">
     <div class="reveal-text">
-        <h2 class="reveal" style="color: black">MARTHA & RICARDO</h2>
-        <p class="reveal" style="color: black">GRACIAS POR SER PARTE DEL MEJOR DÍA DE NUESTRAS VIDAS</p>
-    </div>
+  <h2>MARTHA & RICARDO</h2>
+  <p>GRACIAS POR SER PARTE DEL MEJOR DÍA DE NUESTRAS VIDAS</p>
 </div>
     
         <!-- Información de la boda -->
@@ -1086,15 +1082,14 @@ window.addEventListener("load", fadeInOnScroll);
     }
   };
  // Inicializar ScrollReveal al cargar la página
-    document.addEventListener("DOMContentLoaded", function() {
-        ScrollReveal().reveal(".reveal-text", {
-            delay: 200,
-            distance: "50px",
-            origin: "bottom",
-            easing: "ease-in-out",
-        });
-    });
+     const sr = ScrollReveal({
+    origin: 'bottom',
+    distance: '20px',
+    duration: 2000,
+    delay: 500,
+  });
 
+  sr.reveal('.reveal-text', { interval: 200 });
 
 
         
