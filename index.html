@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
+
     <title>Invitación de Boda</title>
     <style>
         /* Estilos para la página #ffe9da original */
@@ -599,6 +601,12 @@
     padding: 40px 0;
     text-align: center;
 }
+        .reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
 
 
 
@@ -855,11 +863,12 @@
 
     <!-- Sección final con texto a revelar -->
 <div class="final-section">
-    <div class="appear">
+    <div class="reveal-text">
         <h2>MARTHA & RICARDO</h2>
         <p>GRACIAS POR SER PARTE DEL MEJOR DÍA DE NUESTRAS VIDAS</p>
     </div>
 </div>
+
 
     
         <!-- Información de la boda -->
@@ -1076,6 +1085,15 @@ window.addEventListener("load", fadeInOnScroll);
   };
 
         //animacvion final
+document.addEventListener("DOMContentLoaded", function() {
+    // Inicializar ScrollReveal
+    ScrollReveal().reveal(".reveal-text", {
+        delay: 200,
+        distance: "50px",
+        origin: "bottom",
+        easing: "ease-in-out",
+    });
+});
 
 
 
