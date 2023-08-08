@@ -323,7 +323,7 @@
     }
 
         /* Estilos para la sección SALÓN */
-        #salon-section {
+        .salon-section {
 
               color: #000000;
               padding: 20px;
@@ -332,7 +332,7 @@
               margin-top: 20px;
         }
 
-        #salon-section h2 {
+        .salon-section h2 {
             margin: 0;
               font-size: 24px;
               font-family: 'Merienda', cursive;
@@ -365,7 +365,7 @@
         }
 
          /* Estilos para la sección DRESS CODE */
-        #dress-code-section {
+        .dress-code-section {
             color: #000000;
             padding: 20px;
             border-radius: 10px;
@@ -373,13 +373,13 @@
             margin-top: 20px;
         }
 
-        #dress-code-section h3 {
+        .dress-code-section h3 {
             margin: 0;
             font-size: 24px;
             font-family: 'Merienda', cursive;
         }
         
-        #dress-code-section p {
+        .dress-code-section p {
             font-size: 18px;
             font-family: 'Noto Serif TC', serif;
             margin-bottom: 10px;
@@ -399,7 +399,7 @@
 
         /* estilo para el aviso de ñiños*/
 
-        #sin-ninos-section {
+        .sin-ninos-section {
             color: #000000;
             padding: 20px;
             border-radius: 10px;
@@ -407,13 +407,13 @@
             margin-top: 20px;
         }
 
-        #sin-ninos-section h2 {
+        .sin-ninos-section h2 {
             margin: 0;
             font-size: 24px;
             font-family:'Merienda', cursive;
         }
 
-        #sin-ninos-section p {
+        .sin-ninos-section p {
             font-size: 18px;
             font-family: 'Noto Serif TC', serif;
         }
@@ -424,7 +424,7 @@
         }
 
         /* Estilos para la nueva sección MESA DE REGALOS */
-        #mesa-de-regalos-section {
+        .mesa-de-regalos-section {
             color: #000000; 
             padding: 20px;
             border-radius: 10px;
@@ -435,20 +435,20 @@
             align-items: center;
         }
 
-        #mesa-de-regalos-section h2 {
+        .mesa-de-regalos-section h2 {
             margin: 0;
             font-size: 24px;
             font-family: 'Merienda', cursive;
             
         }
 
-        #mesa-de-regalos-section p {
+        .mesa-de-regalos-section p {
             font-size: 18px;
             font-family: 'Noto Serif TC', serif;
             margin-bottom: 10px;
         }
 
-        #mesa-de-regalos-button {
+        .mesa-de-regalos-button {
             background-color: #ada86d;
             border: none;
             cursor: pointer;
@@ -461,7 +461,7 @@
             text-decoration: none;
         }
 
-        #mesa-de-regalos-button:hover {
+        .mesa-de-regalos-button:hover {
             background-color: #cab700;
         }
 
@@ -483,7 +483,7 @@
             
         }
 
-        #separador-section {
+        .separador-section {
             height: 200px;
             color: #000000;
             border-radius: 10px;
@@ -742,7 +742,7 @@
 </div>
 
  <!--Separador de divs-->
- <div id="separador-section">
+ <div class="separador-section">
     <img class="img-separador" src="Source/separador.png" alt="separador">
 </div>
 
@@ -780,7 +780,7 @@
 
     </main>
  <!--Separador de divs-->
- <div id="separador-section">
+ <div clas="separador-section">
     <img class="img-separador" src="Source/separador.png" alt="separador">
 </div>
 
@@ -809,7 +809,7 @@
 </div>
 
     <!-- Sección DRESS CODE -->
-<div id="dress-code-section">
+<div class="dress-code-section">
     <h3>DRESS CODE</h3>
     <h3>FORMAL</h3><br>
     <p class="centered-paragraph dress-code-paragraph">
@@ -825,7 +825,7 @@
 
 
     <!-- Nueva sección SIN NIÑOS -->
-<div id="sin-ninos-section"> 
+<div class="sin-ninos-section"> 
         <h2>¡NO NIÑOS!</h2>
         <p class="centered-paragraph"> <img class="child-icon" src="/Source/ninos.png" alt=""><br>
              Amamos a los niños, pero creemos que necesitan una noche libre.<br>
@@ -835,12 +835,12 @@
     </div>
     
      <!--Separador de divs-->
-     <div id="separador-section">
+     <div class="separador-section">
         <img class="img-separador" src="Source/separador.png" alt="separador">
     </div>
 
     <!-- Nueva sección MESA DE REGALOS -->
-    <div id="mesa-de-regalos-section">
+    <div class="mesa-de-regalos-section">
         <h2>MESA DE REGALOS</h2>
         <p>Nuestro mejor regalo es que estés con nosotros en nuestro día, pero si quieres hacernos un obsequio te compartimos la siguiente opcion:</p>
         <img class="img-regalo"  src="/Source/regalo.png" alt="regalo"><br>
@@ -860,7 +860,7 @@
     </a>
 </div>
  <!-- Nueva sección AGREGAR AL CALENDARIO -->
-<div id="agregar-al-calendario-section" class="confirmation-form-container">
+<div class="agregar-al-calendario-section" class="confirmation-form-container">
     <img class="img-calendar" src="/Source/calendario.png" alt="Calendario">
     <p>Agrega nuestra boda a tu calendario:</p><br>
     <button id="agregar-al-calendario-button">Agregar al Calendario</button>
@@ -1105,7 +1105,7 @@ window.addEventListener("load", fadeInOnScroll);
         sr.reveal('.salon-section', { interval: 200 });
         sr.reveal('.blessing-container', { interval: 200 });
         sr.reveal('.bendicion-container', { interval: 200 });
-        sr.reveal('.img-separador', { interval: 200 });
+        sr.reveal('.separador-section', { interval: 200 });
         sr.reveal('.container', { interval: 200 });
         sr.reveal('.tituloceremony-container', { interval: 200 });
        
