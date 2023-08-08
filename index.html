@@ -27,8 +27,8 @@
            /* background-image: url('source/cover.jpg');
             background-size: cover;
             background-position: center center;
-            background: linear-gradient(rgba(245, 245, 220, 0.75), rgba(245, 245, 220, 0.75)), url(/Source/image12.jpg) no-repeat center center fixed;
-            height: 100vh;*/
+            background: linear-gradient(rgba(245, 245, 220, 0.75), rgba(245, 245, 220, 0.75)), url(/Source/image12.jpg) no-repeat center center fixed;*/
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -131,6 +131,7 @@
             overflow: hidden;
             position: relative;
             margin-top: 20px;
+            opacity: 0;
         }
 
         .carousel-inner {
@@ -631,9 +632,9 @@
     <header class="appear">
       <div id="content">
           <h1 id="title" class="appear">
-            <span style="position: relative; top: 60px; margin-top: 100px;">M</span>
-            <span style="position: relative; top: 60px; margin-top: 100px;">&</span>
-            <span style="position: relative; top: 60px; margin-top: 100px;">R</span>
+            <span style="position: relative; top: 60px; margin-top: 60px;">M</span>
+            <span style="position: relative; top: 60px; margin-top: 60px;">&</span>
+            <span style="position: relative; top: 60px; margin-top: 600px;">R</span>
           </h1>
           <h2 class="appear" style="color: #fef5ee; font-size: 26px; font-weight: bold; text-shadow: -3px 3px 3px #808080; font-family: 'Noto Serif TC', serif">¡NOS CASAMOS!</h2> 
     
@@ -1093,6 +1094,7 @@ window.addEventListener("load", fadeInOnScroll);
   });
 
   sr.reveal('.reveal-text', { interval: 200 });
+        sr.reveal('.carousel', { interval: 200 });
 
 
         
