@@ -928,7 +928,7 @@ function isElementInViewport(el) {
 
 // Función que maneja el efecto de desvanecimiento cuando el elemento es visible
 function fadeInOnScroll() {
-    const fraseElement = document.getElementById("frase");
+   /* const fraseElement = document.getElementById("frase");*/
 
     function fadeIn() {
         let opacity = 0;
@@ -1092,6 +1092,7 @@ window.addEventListener("load", fadeInOnScroll);
   });
 
   sr.reveal('.reveal-text', { interval: 200 });
+  sr.reveal('.frase-container', { interval: 200 });
   sr.reveal('.contador-content', { interval: 200 });
   sr.reveal('.carousel', { interval: 200 });
 
