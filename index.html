@@ -979,17 +979,6 @@ window.addEventListener("load", fadeInOnScroll);
   document.getElementById("play-button").style.display = "block";
 });
 
-// Código JavaScript para detener la música al salir del navegador
- var audio = new Audio("source/cancion.mp3"); // Reemplaza con el ID correcto de tu elemento de audio
-
-// Evento para detener la música cuando cambia la visibilidad de la página
-document.addEventListener("visibilitychange", function() {
-  if (document.visibilityState === "hidden") {
-    audio.pause();
-    // Además, puedes realizar otras acciones aquí, como ocultar botones de reproducción, etc.
-  }
-});
-
 
 
         /
