@@ -979,8 +979,20 @@ window.addEventListener("load", fadeInOnScroll);
   document.getElementById("play-button").style.display = "block";
 });
 
+// Código JavaScript para detener la música al salir del navegador
+ var audio = document.getElementById("source/cancion.mp3");); // Reemplaza con el ID correcto de tu elemento de audio
 
-        
+// Evento para detener la música cuando cambia la visibilidad de la página
+document.addEventListener("visibilitychange", function() {
+  if (document.visibilityState === "hidden") {
+    audio.pause();
+    // Además, puedes realizar otras acciones aquí, como ocultar botones de reproducción, etc.
+  }
+});
+
+
+
+        /
       // Código JavaScript para el carrusel de imágenes
       var slideIndex = 0;
       var slides = document.querySelectorAll(".carousel-image");
