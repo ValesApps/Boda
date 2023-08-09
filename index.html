@@ -964,7 +964,6 @@ window.addEventListener("load", fadeInOnScroll);
 
   // Código JavaScript para detener la música al hacer clic en los enlaces
   var links = document.querySelectorAll("a");
-  var agregarButton = document.getElementById("agregar-al-calendario-button");
 
   links.forEach(link => {
     link.addEventListener("click", function() {
@@ -973,12 +972,7 @@ window.addEventListener("load", fadeInOnScroll);
       document.getElementById("play-button").style.display = "block";
     });
   });
- agregarButton.addEventListener("click", function() {
-  audio.pause(); // Detener la música
-  document.getElementById("pause-button").style.display = "none";
-  document.getElementById("play-button").style.display = "block";
-});
-
+ 
 
 
         /
